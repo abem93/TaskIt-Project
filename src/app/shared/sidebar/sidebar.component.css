@@ -1,0 +1,31 @@
+h1{
+  position: absolute;
+  width: 142px;
+  height: 34px;
+  top: 49px;
+  left: 21px;
+
+}
+
+button{
+  position: absolute;
+  background: #48C15B;
+  color: white;
+  border-radius: 12px;
+  width: 200px;
+  height: 48px;
+  top: 125px;
+  left: 22px;
+  border: none;
+}
+
+app-profile{
+  position: absolute;
+  color: blue;
+  z-index: 100;
+  height: 62px;
+  width: 244px;
+  bottom: 10px;
+  padding: 11px 16px;
+  border-top: 1px solid grey;
+}
