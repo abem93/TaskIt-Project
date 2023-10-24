@@ -6,6 +6,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './shared/sidebar/profile/profile.component';
 import { TaskModalComponent } from './task-list/task-modal/task-modal.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { FormsModule } from '@angular/forms';
+import { NewTaskComponent } from './task-list/new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { TaskListComponent } from './task-list/task-list.component';
     SidebarComponent,
     ProfileComponent,
     TaskModalComponent,
-    TaskListComponent
+    TaskListComponent,
+    NewTaskComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,56 @@
+*{
+  border-radius: 9px;
+}
+::placeholder {
+  color: #A5A5A5;
+  opacity: 1;
+}
+select option:disabled{
+  color: red;
+}
+
+form{
+  display: flex;
+}
+h3{
+  margin-left: 5%;
+}
+.left-side{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 5%;
+}
+.left-side *{
+  padding: 2%;
+  text-indent: 2%;
+  margin-bottom: 23px;
+}
+.right-side{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 20%;
+}
+.right-side *{
+  padding: 7%;
+  text-indent: 4%;
+  margin-bottom: 23px;
+}
+
+/* .buttons{
+  display: flex;
+} */
+.buttons *{
+  border: none;
+  border-radius: 9px;
+  padding: 8%;
+  margin-right: 4%;
+  color: white;
+  background: #4B4B4B;;
+}
+
+#submitBtn{
+  background: #48C15B;
+}
