@@ -1,20 +1,20 @@
 <div>
   <h3>Add a New Task</h3>
-  <form>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="left-side">
-      <input type="text" name="title" id="title" placeholder="Title">
-      <textarea name="description" id="description" rows="8" placeholder="Description"></textarea>
+      <input type="text" name="title" id="title" placeholder="Title" ngModel name="title" required>
+      <textarea name="description" id="description" rows="8" placeholder="Description" ngModel required></textarea>
     </div>
     <div class="right-side">
-      <input type="text" name="date" placeholder="Date" min="2000-01-01" max="2029-12-31" onfocus="this.type='date'" onblur="this.type='text'">
-      <select name="priority" id="priority">
-        <option value="" disabled selected>Priority</option>
+      <input type="text" name="date" placeholder="Date" min="2000-01-01" max="2029-12-31" onfocus="this.type='date'" onblur="this.type='text' | Date" ngModel>
+      <select name="priority" id="priority" ngModel required>
+        <option value="select" selected disabled hidden>Priority</option>
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
-      <select name="status" id="status">
-        <option value="" disabled select>Status</option>
+      <select name="status" id="status" ngModel>
+        <option value="select" selected disabled hidden>Status</option>
         <option value="notStarted">Not Started</option>
         <option value="InProgress">In Progress</option>
         <option value="completed">Completed</option>
@@ -24,9 +24,6 @@
         <button id="submitBtn">Create</button>
       </div>
     </div>
-
   </form>
-
-
 </div>
 

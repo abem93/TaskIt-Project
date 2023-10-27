@@ -2,7 +2,11 @@ h1{
   position: fixed;
   top: 5%;
   left: 3%;
-  font-size: 1.7em;
+  font-family: Inter;
+  font-size: 1.75em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   background: linear-gradient(to right, #48C15B 74%, #000000 26%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -14,7 +18,9 @@ button{
   background: #48C15B;
   color: white;
   border-radius: 12px;
-  padding: .8% 5%;
+  padding: 0.9375em 0;
+  height: 3em;
+  width: 12.5em;
   top: 15%;
   left: 2%;
   border: none;

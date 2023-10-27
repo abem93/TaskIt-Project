@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-task',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class NewTaskComponent {
 
+
+  onSubmit(form: NgForm){
+    console.log(form)
+  }
 }

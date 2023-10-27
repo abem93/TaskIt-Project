@@ -1,8 +1,55 @@
+h1{
+  font-size: 2.5em;
+}
 .tasklist-options{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.75em;
 }
 .filters{
   display: flex;
-  justify-content: space-evenly;
+  width: 50%;
+  align-self: flex-end;
 }
+.filters *{
+  width: 6.5em;
+  height: 1.625em;
+  border-radius: 4px;
+  margin-right: auto;
+}
+.filters>span{
+  color: #000;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 590;
+  line-height: normal;
+  margin: .0625em 1% 0 1.125em;
+  width: 3.4375em;
+  align-self: flex-end;
+}
+button{
+  background: #48C15B;
+  color: white;
+  border-radius: 13px;
+  padding: .8% 5%;
+  border: none;
+}
+h1{
+  margin-bottom: 2%;
+}
+.tasklist-items{
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.tasklist-headings{
+  display: flex;
+  justify-content: space-around;
+}
+.tasklist-headings p{
+  margin-right: auto;
+  padding: 1.0625em 1% 0 1.125em;
+  height: 44.5625em;
+  width: 13.75em;
+}
+

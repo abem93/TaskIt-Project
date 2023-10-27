@@ -3,14 +3,14 @@
     <div class="filters">
       <Span>Filters: </Span>
       <select name="status" id="" placeholder="status">
-        <option value="" disabled selected>Status</option>
+        <option value="" selected disabled hidden>Status</option>
         <option value="notStarted">Not Started</option>
         <option value="InProgress">In Progress</option>
         <option value="completed">Completed</option>
       </select>
-      <input type="text" name="date" placeholder="Date" min="2000-01-01" max="2029-12-31" onfocus="this.type='date'"/>
+      <input type="text" name="date" placeholder="Date" min="2000-01-01" max="2029-12-31" onfocus="this.type='date'" onblur="this.type='text' | Date"/>
       <select class="priority">
-        <option value="" disabled selected>Priority</option>
+        <option value="" selected disabled hidden>Priority</option>
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
@@ -18,7 +18,17 @@
     </div>
     <button>Add New Task</button>
 </div>
+<div class="tasklist-items">
+  <div class="tasklist-headings">
+    <p>Title</p>
+    <p>Due Date</p>
+    <p>Priority</p>
+    <p>Status</p>
+    <p>Actions</p>
+  </div>
+  <div class="tasklist-row">
+
+  </div>
+</div>
 
 
-<hr>
-<app-new-task></app-new-task>
