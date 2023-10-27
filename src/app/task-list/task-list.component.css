@@ -9,13 +9,17 @@ h1{
 .filters{
   display: flex;
   width: 50%;
-  align-self: flex-end;
+  align-items: flex-end;
+  justify-content:space-between;
 }
-.filters *{
+.filters>*{
+  text-align: center;
   width: 6.5em;
   height: 1.625em;
   border-radius: 4px;
-  margin-right: auto;
+  margin-right: 0.9375em;
+  border: 1px solid #D2D2D2;
+  color: #A5A5A5;
 }
 .filters>span{
   color: #000;
@@ -24,9 +28,11 @@ h1{
   font-style: normal;
   font-weight: 590;
   line-height: normal;
-  margin: .0625em 1% 0 1.125em;
+  margin: .0625em 0.4375em 0 1.125em;
+  padding-top: .3em;
   width: 3.4375em;
   align-self: flex-end;
+  border: none;
 }
 button{
   background: #48C15B;
@@ -39,17 +45,40 @@ h1{
   margin-bottom: 2%;
 }
 .tasklist-items{
-  border: 1px solid black;
+  border: 1px solid #D2D2D2;
   border-radius: 10px;
+  height:  44.5625em;
+
 }
-.tasklist-headings{
+.tasklist-headings, .tasklist-row{
   display: flex;
   justify-content: space-around;
 }
-.tasklist-headings p{
+.tasklist-headings>p{
   margin-right: auto;
   padding: 1.0625em 1% 0 1.125em;
-  height: 44.5625em;
+  height: 3em;
   width: 13.75em;
+  border-bottom: 1px solid #D2D2D2;
+  justify-content: center;
+  color: #A5A5A5;
+
 }
+.tasklist-row>p{
+  margin-right: auto;
+  padding-left: 1.125em;
+  height: 2.75em;
+  width: 13.75em;
+  border-bottom: 1px solid #D2D2D2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  align-items: center;
+}
+
+.tasklist-row{
+align-items: flex-start;
+}
+
 
