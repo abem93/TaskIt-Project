@@ -8,6 +8,9 @@ import { TaskModalComponent } from './task-list/task-modal/task-modal.component'
 import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule } from '@angular/forms';
 import { NewTaskComponent } from './task-list/new-task/new-task.component';
+import { LandingPageComponent } from './shared/landing-page/landing-page.component';
+import { SignUpComponent } from './Auth/sign-up/sign-up.component';
+import { LogInComponent } from './Auth/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { NewTaskComponent } from './task-list/new-task/new-task.component';
     ProfileComponent,
     TaskModalComponent,
     TaskListComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    LandingPageComponent,
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,

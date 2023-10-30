@@ -56,27 +56,28 @@ h1{
 }
 .tasklist-headings>p{
   margin-right: auto;
+  margin-bottom: 0;
   padding: 1.0625em 1% 0 1.125em;
   height: 3em;
   width: 13.75em;
-  border-bottom: 1px solid #D2D2D2;
   justify-content: center;
   color: #A5A5A5;
-
 }
 .tasklist-row>p{
   margin-right: auto;
   padding-left: 1.125em;
+  margin-bottom: 0;
   height: 2.75em;
   width: 13.75em;
-  border-bottom: 1px solid #D2D2D2;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   align-items: center;
 }
-
+hr{
+  margin-top: 0;
+}
 .tasklist-row{
 align-items: flex-start;
 }

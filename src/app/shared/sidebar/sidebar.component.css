@@ -1,7 +1,7 @@
 h1{
   position: fixed;
   top: 5%;
-  left: 3%;
+  left: 1.3125em;
   font-family: Inter;
   font-size: 1.75em;
   font-style: normal;
@@ -13,6 +13,17 @@ h1{
   -webkit-text-fill-color: transparent;
 }
 
+.taskButton{
+  top: 7.8125em;
+  background: #48C15B;
+  color: white;
+}
+.kanBan{
+  top: 11.9375em;
+}
+.bored{
+  top: 16.0625em
+}
 button{
   position: fixed;
   background: #48C15B;
@@ -21,9 +32,19 @@ button{
   padding: 0.9375em 0;
   height: 3em;
   width: 12.5em;
-  top: 15%;
-  left: 2%;
+  left: 1.375em;
   border: none;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+button{
+  color: #000000;
+  background: #F8F8F8;
 }
 
 app-profile{
