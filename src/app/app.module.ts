@@ -4,7 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './shared/sidebar/profile/profile.component';
-import { TaskModalComponent } from './task-list/task-modal/task-modal.component';
+import { DeleteModalComponent } from './task-list/delete-modal/delete-modal.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NewTaskComponent } from './task-list/new-task/new-task.component';
@@ -18,7 +18,7 @@ import { LogInComponent } from './auth/log-in/log-in.component';
     AppComponent,
     SidebarComponent,
     ProfileComponent,
-    TaskModalComponent,
+    DeleteModalComponent,
     TaskListComponent,
     NewTaskComponent,
     LandingPageComponent,

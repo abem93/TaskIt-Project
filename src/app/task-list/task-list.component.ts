@@ -4,6 +4,7 @@ import { TaskListService } from './task-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { MatDialog } from '@angular/material/dialog';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-task-list',
@@ -33,8 +34,14 @@ export class TaskListComponent implements OnInit{
     this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks)
   }
   onDelete(id:number){
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      height: '28.3125em',
+      width: '53.4375em',
+      data: {
+        id: id
+      }
+    });
     console.log(this.tasks);
-    this.tasklistService.removeTask(id);
 
   }
   onEdit(id:number){

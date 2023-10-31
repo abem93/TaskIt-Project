@@ -85,3 +85,11 @@ align-items: flex-start;
 mat-dialog-container{
   border-radius: 9px;
 }
+
+svg{
+  padding: 0;
+}
+path{
+  padding: 0 3%;
+  margin: 5%;
+}

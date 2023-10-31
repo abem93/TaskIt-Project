@@ -1,0 +1,9 @@
+<span class="close" mat-button mat-dialog-close>&times;</span>
+<div class="container">
+  <h1>Are you sure you want to delete task  '{{ task.title }}'?</h1>
+  <div class="buttons">
+    <button type="button" mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" id="submitBtn" (click)="onDelete()" mat-button [mat-dialog-close]>Delete</button>
+  </div>
+</div>
+

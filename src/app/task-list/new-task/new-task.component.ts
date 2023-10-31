@@ -35,9 +35,10 @@ export class NewTaskComponent implements OnInit{
   ngOnInit(): void {
     if(this.id){
       this.editedTask = this.taskListService.getTask(this.id)
+      this.isEditMode= true;
+    }else{
+      this.isEditMode = false
     }
-
-
   }
 
 
@@ -47,7 +48,6 @@ export class NewTaskComponent implements OnInit{
     console.log(this.task)
 
     if (this.isEditMode) {
-
       this.taskListService.updateTask(this.id, this.task);
     } else {
       this.taskListService.saveTask(this.task);
@@ -55,7 +55,6 @@ export class NewTaskComponent implements OnInit{
       form.reset({
       });
     }
-
-
+    this.isEditMode = false
   }
 }
