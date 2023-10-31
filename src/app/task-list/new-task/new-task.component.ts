@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Task } from '../task.model';
 import { TaskListService } from '../task-list.service';
@@ -19,36 +19,32 @@ export class NewTaskComponent implements OnInit{
   task: Task = new Task('','','','','');
   subscription: Subscription;
   isEditMode: boolean = false;
-  editedTask: Task;
+  editedTask: Task = new Task('','','','','');
   formSubmitted = false;
 
 
 
   constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any ){
-    // console.log(this.taskListService.getTask(this.data.id))
+    //  console.log(this.taskListService.getTask(this.data.id))
+     this.id = this.data.id
 
   }
 
 
 
   ngOnInit(): void {
-    const editedTask = this.editedTask
-    console.log(editedTask)
-    if(this.isEditMode){
-      this.taskListForm.setValue({
-        title: editedTask.title,
-        description: editedTask.description,
-        date: editedTask.date,
-        priority: editedTask.priority,
-        status: editedTask.status
-      })
+    if(this.id){
+      this.editedTask = this.taskListService.getTask(this.id)
     }
+
+
   }
 
 
   onSubmit(form: NgForm) {
     this.formSubmitted = true;
     this.task = { ...form.value };
+    console.log(this.task)
 
     if (this.isEditMode) {
 
@@ -59,8 +55,6 @@ export class NewTaskComponent implements OnInit{
       form.reset({
       });
     }
-
-
 
 
   }

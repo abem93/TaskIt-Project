@@ -9,8 +9,8 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NewTaskComponent } from './task-list/new-task/new-task.component';
 import { LandingPageComponent } from './shared/landing-page/landing-page.component';
-import { SignUpComponent } from './Auth/sign-up/sign-up.component';
-import { LogInComponent } from './Auth/log-in/log-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { LogInComponent } from './auth/log-in/log-in.component';
 
 
 @NgModule({

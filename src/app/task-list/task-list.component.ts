@@ -38,6 +38,7 @@ export class TaskListComponent implements OnInit{
 
   }
   onEdit(id:number){
+    this.isEditMode = true;
     this.tasklistService.startedEditing.next(id);
     this.openNew(id)
 

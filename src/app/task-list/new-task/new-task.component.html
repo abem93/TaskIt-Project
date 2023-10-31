@@ -8,20 +8,20 @@
         name="title"
         id="title"
         placeholder="Title"
-        ngModel
+        [ngModel]="editedTask.title"
         name="title"
         required>
-      <textarea name="description" id="description" rows="8" placeholder="Description" ngModel></textarea>
+      <textarea name="description" id="description" rows="8" placeholder="Description" [ngModel]="editedTask.description"></textarea>
     </div>
     <div class="right-side">
-      <input type="text" name="date" placeholder="Date" onfocus="this.type='date'" onblur="this.type='text' | Date" ngModel>
-      <select name="priority" id="priority" ngModel required>
+      <input type="text" name="date" placeholder="Date" onfocus="this.type='date'" onblur="this.type='text' | Date" [ngModel]="editedTask.date">
+      <select name="priority" id="priority" [ngModel]="editedTask.priority" required>
         <option value="" selected disabled hidden>Priority</option>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
-      <select name="status" id="status" ngModel>
+      <select name="status" id="status" [ngModel]="editedTask.status">
         <option value="" selected disabled hidden>Status</option>
         <option value="Not Started">Not Started</option>
         <option value="In Progress">In Progress</option>
