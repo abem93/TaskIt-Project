@@ -11,6 +11,7 @@ import { NewTaskComponent } from './task-list/new-task/new-task.component';
 import { LandingPageComponent } from './shared/landing-page/landing-page.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
+import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LogInComponent } from './auth/log-in/log-in.component';
     NewTaskComponent,
     LandingPageComponent,
     SignUpComponent,
-    LogInComponent
+    LogInComponent,
+    KanbanBoardComponent
   ],
   imports: [
     BrowserModule,

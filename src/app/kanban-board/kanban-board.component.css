@@ -1,0 +1,103 @@
+h1{
+  color: #000;
+  font-family: 'Inter';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0.875em;
+}
+
+h5{
+  color: #A5A5A5;
+  font-family: 'Inter';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+
+.column{
+  border-radius: 8px;
+  border: 1px solid #DCDCDC;
+  background: #F9F9F9;
+  flex-shrink: 0;
+  width: 25.353375em;
+  height: 49.3125em;
+  margin-right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.taskCard{
+  margin-top: 5%;
+  border-radius: 8px;
+  border: 1px solid #DCDCDC;
+  background: #FFFF;
+  width: 95%;
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.left-side{
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side>p{
+  color: #000;
+  font-family: 'Inter';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.left-side span{
+  color: #A5A5A5;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 1em;
+}
+
+.info{
+  display: flex;
+}
+.info>p{
+  color: #000;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.status{
+  text-align: center;
+  padding: 1%;
+  border-radius: 4px;
+  background: #FCF299;
+  width: 86px;
+  height: 1.6em;
+  flex-shrink: 0;
+  color: #656339;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

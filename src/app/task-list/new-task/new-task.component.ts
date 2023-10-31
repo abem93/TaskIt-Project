@@ -25,15 +25,18 @@ export class NewTaskComponent implements OnInit{
 
 
   constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any ){
-    //  console.log(this.taskListService.getTask(this.data.id))
-     this.id = this.data.id
+      // console.log(this.taskListService.getTask(this.data.id))
+      console.log(this.data.id)
+
 
   }
 
 
 
   ngOnInit(): void {
-    if(this.id){
+
+    if(this.data.id !== undefined){
+      this.id = this.data.id
       this.editedTask = this.taskListService.getTask(this.id)
       this.isEditMode= true;
     }else{
@@ -51,7 +54,6 @@ export class NewTaskComponent implements OnInit{
       this.taskListService.updateTask(this.id, this.task);
     } else {
       this.taskListService.saveTask(this.task);
-
       form.reset({
       });
     }

@@ -1,6 +1,6 @@
 <div mat-dialog-content id="popup">
   <span class="close" mat-button mat-dialog-close>&times;</span>
-  <h3>Add a New Task</h3>
+  <h3>{{ isEditMode ? 'Edit Task': 'Add a New Task' }}</h3>
   <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
     <div class="left-side">
       <input
@@ -10,26 +10,41 @@
         placeholder="Title"
         [ngModel]="editedTask.title"
         name="title"
+        #titleInput="ngModel"
         required>
+      <span class="error" *ngIf="titleInput.touched && !titleInput.valid">Please enter a task name!</span>
+
+
       <textarea name="description" id="description" rows="8" placeholder="Description" [ngModel]="editedTask.description"></textarea>
     </div>
     <div class="right-side">
-      <input type="text" name="date" placeholder="Date" onfocus="this.type='date'" onblur="this.type='text' | Date" [ngModel]="editedTask.date">
-      <select name="priority" id="priority" [ngModel]="editedTask.priority" required>
+
+      <input type="text" name="date" placeholder="Date" onfocus="this.type='date'" onblur="this.type='text' | Date" [ngModel]="editedTask.date" #dateInput="ngModel">
+      <span class="error" *ngIf="dateInput.touched && !dateInput.valid">Please select a date!</span>
+
+      <select name="priority" id="priority" [ngModel]="editedTask.priority" required #requiredInput="ngModel">
         <option value="" selected disabled hidden>Priority</option>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
-      <select name="status" id="status" [ngModel]="editedTask.status">
+
+      <span class="error" *ngIf="requiredInput.touched && !requiredInput.valid">Please select task priority!</span>
+
+
+      <select name="status" id="status" [ngModel]="editedTask.status" #statusInput="ngModel" required>
         <option value="" selected disabled hidden>Status</option>
         <option value="Not Started">Not Started</option>
         <option value="In Progress">In Progress</option>
         <option value="Completed">Completed</option>
       </select>
+
+      <span class="error" *ngIf="statusInput.touched && !statusInput.valid">Please select task status!</span>
+
+
       <div class="buttons">
         <button type="button" style="cursor: pointer;" mat-button mat-dialog-close>Cancel</button>
-        <button type="submit" id="submitBtn" mat-button [mat-dialog-close] [disabled]="!taskForm.valid">Create</button>
+        <button type="submit" id="submitBtn" mat-button [mat-dialog-close] [disabled]="!taskForm.valid">{{ isEditMode ? 'Update': 'Add' }}</button>
       </div>
     </div>
   </form>

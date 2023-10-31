@@ -64,10 +64,11 @@ h1{
   color: #A5A5A5;
 }
 .tasklist-row>p{
+  flex-basis: 18%;
   margin-right: auto;
   padding-left: 1.125em;
   margin-bottom: 0;
-  height: 2.75em;
+  height: 2.3em;
   width: 13.75em;
   font-size: 16px;
   font-style: normal;
@@ -80,16 +81,19 @@ hr{
 }
 .tasklist-row{
 align-items: flex-start;
+flex-wrap: wrap;
 }
 
 mat-dialog-container{
   border-radius: 9px;
+  padding-bottom: 0;
 }
 
-svg{
-  padding: 0;
-}
 path{
   padding: 0 3%;
   margin: 5%;
+}
+.line{
+  flex-basis: 100%;
+  height: 0;
 }
