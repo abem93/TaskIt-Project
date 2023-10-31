@@ -82,4 +82,6 @@ hr{
 align-items: flex-start;
 }
 
-
+mat-dialog-container{
+  border-radius: 9px;
+}

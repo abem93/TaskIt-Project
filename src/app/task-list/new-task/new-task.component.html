@@ -1,27 +1,35 @@
-<div>
+<div mat-dialog-content id="popup">
+  <span class="close" mat-button mat-dialog-close>&times;</span>
   <h3>Add a New Task</h3>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
     <div class="left-side">
-      <input type="text" name="title" id="title" placeholder="Title" ngModel name="title" required>
-      <textarea name="description" id="description" rows="8" placeholder="Description" ngModel required></textarea>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Title"
+        ngModel
+        name="title"
+        required>
+      <textarea name="description" id="description" rows="8" placeholder="Description" ngModel></textarea>
     </div>
     <div class="right-side">
-      <input type="text" name="date" placeholder="Date" min="2000-01-01" max="2029-12-31" onfocus="this.type='date'" onblur="this.type='text' | Date" ngModel>
+      <input type="text" name="date" placeholder="Date" onfocus="this.type='date'" onblur="this.type='text' | Date" ngModel>
       <select name="priority" id="priority" ngModel required>
-        <option value="select" selected disabled hidden>Priority</option>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
+        <option value="" selected disabled hidden>Priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
       </select>
       <select name="status" id="status" ngModel>
-        <option value="select" selected disabled hidden>Status</option>
-        <option value="notStarted">Not Started</option>
-        <option value="InProgress">In Progress</option>
-        <option value="completed">Completed</option>
+        <option value="" selected disabled hidden>Status</option>
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
       </select>
       <div class="buttons">
-        <button>Cancel</button>
-        <button id="submitBtn">Create</button>
+        <button type="button" style="cursor: pointer;" mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" id="submitBtn" mat-button [mat-dialog-close] [disabled]="!taskForm.valid">Create</button>
       </div>
     </div>
   </form>

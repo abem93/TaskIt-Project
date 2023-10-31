@@ -1,5 +1,6 @@
 *{
   border-radius: 9px;
+
 }
 ::placeholder {
   color: #A5A5A5;
@@ -7,12 +8,24 @@
 }
 
 
+.close{
+  text-align:right;
+  margin-left: auto;
+  text-align: right;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 5%;
+  margin-top: 0;
+}
+
 
 form{
   display: flex;
 }
 h3{
   margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 3%;
 }
 .left-side{
   display: flex;
