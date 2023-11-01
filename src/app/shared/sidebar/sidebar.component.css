@@ -21,8 +21,6 @@ h1{
 
 .taskButton{
   top: 7.8125em;
-  background: #48C15B;
-  color: white;
 }
 .kanBan{
   top: 11.9375em;
@@ -32,8 +30,6 @@ h1{
 }
 button{
   position: fixed;
-  background: #48C15B;
-  color: white;
   border-radius: 12px;
   padding: 0.9375em 0;
   height: 3em;
@@ -52,7 +48,10 @@ button{
   color: #000000;
   background: #F8F8F8;
 }
-
+.active{
+  background: #48C15B;
+  color: white;
+}
 app-profile{
   position: absolute;
   width: 100%;
