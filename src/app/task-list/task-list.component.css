@@ -100,8 +100,12 @@ mat-dialog-container{
 }
 
 path{
-  padding: 0 10%;
+  padding: 20%;
   fill: #000;
+  z-index: 10;
+}
+svg{
+  z-index: 0;
 }
 .line{
   flex-basis: 100%;
@@ -133,4 +137,19 @@ path{
 .done .status{
   border-radius: 4px;
   background: #A7FC99;
+}
+
+.priority{
+  flex-basis: 18%;
+  padding-left: 1%;
+  margin-right: auto;
+  margin-bottom: 0;
+  height: 2.3em;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  align-items: center;
+  border: none;
+  appearance: none;
 }

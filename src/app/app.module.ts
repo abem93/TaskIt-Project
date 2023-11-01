@@ -28,7 +28,7 @@ import { MainViewComponent } from './shared/main-view/main-view.component';
     SignUpComponent,
     LogInComponent,
     KanbanBoardComponent,
-    MainViewComponent
+    MainViewComponent,
   ],
   imports: [
     BrowserModule,

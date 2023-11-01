@@ -48,6 +48,7 @@ export class NewTaskComponent implements OnInit{
   onSubmit(form: NgForm) {
     this.formSubmitted = true;
     this.task = { ...form.value };
+    this.task.title = this.task.title[0].toUpperCase() + this.task.title.slice(1)
     console.log(this.task)
 
     if (this.isEditMode) {
