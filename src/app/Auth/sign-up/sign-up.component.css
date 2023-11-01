@@ -9,6 +9,12 @@
 }
 
 h1 {
+  font-family: 'Inter';
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 2%;
   background: linear-gradient(
     to right,
     black 40%,
@@ -18,12 +24,7 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Inter';
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-left: 2%;
+
 }
 p{
   margin-left: 3%;

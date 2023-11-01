@@ -15,7 +15,7 @@ export class TaskListService {
       '',
       '8/25/2024',
       'Low',
-      'Not Started'
+      'To Do'
     ),
     new Task(
       'Homework',
@@ -29,7 +29,7 @@ export class TaskListService {
       '',
       '12/25/2023',
       'High',
-      'Completed'
+      'Done'
     )
   ]
 

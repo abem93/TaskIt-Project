@@ -89,10 +89,11 @@ h5{
 .status{
   text-align: center;
   padding: 1%;
+  border: none;
   border-radius: 4px;
   background: #FCF299;
-  width: 86px;
-  height: 1.6em;
+  width: 5.375rem;
+  height: 1.8rem;
   flex-shrink: 0;
   color: #656339;
   font-family: 'Inter';
@@ -100,4 +101,15 @@ h5{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.inProgress .status{
+  border-radius: 4px;
+  background: #99F6FC;
+  width: 7.75rem;
+}
+
+.Done .status{
+  border-radius: 4px;
+  background: #A7FC99;
 }
