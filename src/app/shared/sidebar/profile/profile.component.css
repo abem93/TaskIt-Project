@@ -2,22 +2,32 @@
   display: flex;
 }
 .profile-pic{
-  border-radius: 50%;
-  max-height: 30px;
+  border-radius: 100px;
+  height: 2.375rem;
   margin-left: 30%;
 }
 
 .info>p{
-  font-size: .6em;
+  font-size: .75rem;
+  color: #898989;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
   padding-left: 20%;
   padding-top: 1%;
   margin: 0;
-  color: rgb(120, 120, 120);;
+
 }
 h3{
-  font-size: .8em;
+  font-size: .875em;
   padding-left: 20%;
   margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color:#1E1E1E;
 }
 .logout{
   padding-left: 140%;
