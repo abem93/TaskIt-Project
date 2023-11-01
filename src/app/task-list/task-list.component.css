@@ -1,5 +1,9 @@
 h1{
   font-size: 2.5em;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .tasklist-options{
   display: flex;
@@ -96,10 +100,37 @@ mat-dialog-container{
 }
 
 path{
-  padding: 0 3%;
-  margin: 5%;
+  padding: 0 10%;
+  fill: #000;
 }
 .line{
   flex-basis: 100%;
   height: 0;
+}
+.tasklist-row .status{
+  text-align: center;
+  padding: 1%;
+  border: none;
+  border-right: 6px solid transparent;
+  border-radius: 4px;
+  background: #FCF299;
+  height: 1.8rem;
+  flex-shrink: 0;
+  color: #656339;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.inProgress .status{
+  border-radius: 4px;
+  background: #99F6FC;
+  width: 7.75rem;
+}
+
+.done .status{
+  border-radius: 4px;
+  background: #A7FC99;
 }

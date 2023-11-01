@@ -90,6 +90,7 @@ h5{
   text-align: center;
   padding: 1%;
   border: none;
+  border-right: 6px solid transparent;
   border-radius: 4px;
   background: #FCF299;
   width: 5.375rem;
