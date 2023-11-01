@@ -12,6 +12,8 @@ import { LandingPageComponent } from './shared/landing-page/landing-page.compone
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MainViewComponent } from './shared/main-view/main-view.component';
 
 
 @NgModule({
@@ -25,13 +27,15 @@ import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
     LandingPageComponent,
     SignUpComponent,
     LogInComponent,
-    KanbanBoardComponent
+    KanbanBoardComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
