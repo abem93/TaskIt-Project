@@ -9,6 +9,9 @@ export class TaskListService {
   taskSelected = new Subject<Task>();
   taskListChanged = new Subject<Task[]>();
   startedEditing = new Subject<number>();
+  notification = new Subject<Notification>();
+
+
   private tasks: Task[] = [
     new Task(
       'Run',
@@ -58,6 +61,11 @@ export class TaskListService {
   updateTask(index: number, updatedTask) {
     this.tasks[index] = updatedTask;
     this.taskListChanged.next(this.getTasks());
+
+  }
+
+  notify(index:number){
+
   }
 }
 

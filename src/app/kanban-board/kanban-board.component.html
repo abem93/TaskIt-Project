@@ -7,9 +7,14 @@
         <ng-container *ngIf="task.status == 'To Do'">
           <div class="taskCard" >
             <div class="left-side">
-              <p>{{ task.title }} </p>
+              <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p>{{ task.priority }}</p>
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                  <option value="" selected disabled hidden>Priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select></p>
               </div>
               <div class="info">
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
@@ -34,9 +39,14 @@
         <ng-container *ngIf="task.status == 'In Progress'">
           <div class="taskCard" >
             <div class="left-side">
-              <p>{{ task.title }} </p>
+              <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p>{{ task.priority }}</p>
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                  <option value="" selected disabled hidden>Priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select></p>
               </div>
               <div class="info">
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
@@ -61,9 +71,14 @@
         <ng-container *ngIf="task.status == 'Done'">
           <div class="taskCard" >
             <div class="left-side">
-              <p>{{ task.title }} </p>
+              <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p>{{ task.priority }}</p>
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                  <option value="" selected disabled hidden>Priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select></p>
               </div>
               <div class="info">
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
@@ -80,3 +95,4 @@
     </div>
   </div>
 </div>
+

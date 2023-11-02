@@ -19,4 +19,7 @@ export class KanbanBoardComponent implements OnInit{
   statusChange(event, task){
     // console.log(event, task)
   }
+  priorityChange(){
+
+  }
 }

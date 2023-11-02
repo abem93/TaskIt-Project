@@ -14,6 +14,11 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainViewComponent } from './shared/main-view/main-view.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { MainViewComponent } from './shared/main-view/main-view.component';
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

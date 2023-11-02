@@ -78,14 +78,18 @@ h5{
 .info{
   display: flex;
 }
-.info>p{
+.info select, .info option{
   color: #000;
   font-family: 'Inter';
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  border: none;
+  appearance: none;
+  align-items: flex-start;
 }
+
 
 .status{
   text-align: center;

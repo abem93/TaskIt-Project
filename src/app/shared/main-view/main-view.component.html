@@ -2,6 +2,11 @@
   <app-sidebar></app-sidebar>
 </div>
 
+<div class="notification" *ngIf="show">
+  <span>{{ notification }}</span>
+</div>
+
+
 <div class="task-list">
 <router-outlet></router-outlet>
 </div>

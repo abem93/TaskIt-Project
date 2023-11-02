@@ -1,80 +1,82 @@
-h1{
+
+h1 {
   font-size: 2.5rem;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-.tasklist-options{
+.tasklist-options {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.75em;
 }
-.filters{
+.filters {
   display: flex;
   width: 50%;
   align-items: flex-end;
-
 }
-.filters>*{
+.filters > * {
   text-align: center;
   width: 6.5em;
   height: 1.625em;
   border-radius: 4px;
   margin-right: 0.9375em;
-  border: 1px solid #D2D2D2;
-  color: #A5A5A5;
+  border: 1px solid #d2d2d2;
+  color: #a5a5a5;
 }
-.filters>span{
+.filters > span {
   color: #000;
   font-family: sans-serif;
   font-size: 1em;
   font-style: normal;
   font-weight: 590;
   line-height: normal;
-  margin: .0625em 0.4375em 0 1.125em;
-  padding-top: .3em;
+  margin: 0.0625em 0.4375em 0 1.125em;
+  padding-top: 0.3em;
   width: 3.4375em;
   align-self: flex-end;
   border: none;
 }
 
-button{
-  background: #48C15B;
+button {
+  background: #48c15b;
   text-align: center;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   color: white;
   border-radius: 13px;
-  padding: .8% 5%;
+  padding: 0.8% 5%;
   border: none;
 }
-h1{
+h1 {
   margin-bottom: 2%;
 }
-.tasklist-items{
-  border: 1px solid #D2D2D2;
+.tasklist-items {
+  border: 1px solid #d2d2d2;
   border-radius: 10px;
-  min-height:  35rem;
-
+  min-height: 35rem;
 }
-.tasklist-headings, .tasklist-row{
+.tasklist-headings,
+.tasklist-row {
   display: flex;
   justify-content: space-around;
 }
-.tasklist-headings>p{
+.tasklist-headings > p {
   margin-right: auto;
   margin-bottom: 0;
   padding: 1.0625em 1% 0 1.125em;
   height: 3em;
   width: 13.75em;
   justify-content: center;
-  color: #A5A5A5;
+  color: #a5a5a5;
 }
-.tasklist-row>p{
+.tasklist-row > p {
+  display: flex;
+  align-items: center;
   flex-basis: 18%;
   margin-right: auto;
   padding-left: 1.125em;
@@ -87,60 +89,60 @@ h1{
   line-height: normal;
   align-items: center;
 }
-hr{
+hr {
   margin-top: 0;
 }
-.tasklist-row{
-align-items: flex-start;
-flex-wrap: wrap;
+.tasklist-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-mat-dialog-container{
+mat-dialog-container {
   border-radius: 9px;
   padding-bottom: 0;
 }
 
-path{
+path {
   padding: 20%;
   fill: #000;
   z-index: 10;
 }
-svg{
+svg {
   z-index: 0;
 }
-.line{
+.line {
   flex-basis: 100%;
   height: 0;
 }
-.tasklist-row .status{
+.tasklist-row .status {
   text-align: center;
   padding: 1%;
   border: none;
   border-right: 6px solid transparent;
   border-radius: 4px;
-  background: #FCF299;
+  background: #fcf299;
   height: 1.8rem;
   flex-shrink: 0;
   color: #656339;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.inProgress .status{
+.inProgress .status {
   border-radius: 4px;
-  background: #99F6FC;
+  background: #99f6fc;
   width: 7.75rem;
 }
 
-.done .status{
+.done .status {
   border-radius: 4px;
-  background: #A7FC99;
+  background: #a7fc99;
 }
 
-.priority{
+.priority {
   top: 50%;
   flex-basis: 18%;
   padding-left: 1%;
@@ -154,16 +156,18 @@ svg{
   line-height: normal;
   align-items: center;
   border: none;
+  outline: none;
   appearance: none;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
-.tasklist-row p input{
+.tasklist-row p input {
   border: none;
+  outline: none;
   flex-basis: 18%;
   margin-right: auto;
   padding-left: 1.125em;

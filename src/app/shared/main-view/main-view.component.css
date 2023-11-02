@@ -1,12 +1,35 @@
 .sidebar{
   height: 100vh;
-  width: 244px;
+  width: 15.25rem;
   position: fixed;
   border-right: 1px solid rgb(207, 207, 207);
 }
 .task-list{
-  margin-left: 245px;
-  padding: 4.75em 7em 14em 3.375em;
+  margin-left: 15.3125rem;
+  padding: 4.75rem 7rem 14rem 3.375rem;
 }
 
+.notification {
+  position: fixed;
+  display: flex;
+  margin-top: 0.8rem;
+  margin-left: 18.7rem;
+  border-radius: 8px;
+  border: 1px solid #48c15b;
+  background: #d9f5dd;
+  width: 29.875rem;
+  height: 2.75rem;
+  padding: 0 2%;
+  flex-shrink: 0;
+}
+
+.notification>span{
+  align-self: center;
+  color: #214b28;
+  font-family: 'Inter';
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
 

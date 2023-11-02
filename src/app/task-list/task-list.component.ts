@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit{
   }
   ngOnInit(): void {
     this.tasks = this.tasklistService.getTasks();
-    this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks)
+    this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
   }
   onDelete(id:number){
     const dialogRef = this.dialog.open(DeleteModalComponent, {
@@ -48,8 +48,17 @@ export class TaskListComponent implements OnInit{
   onEdit(id:number){
     this.openNew(id);
   }
-  // onUpdateTitle(id: number){
-  //   this.taskListService.updateTask(this.id, this.task)
-  // }
+
+  priorityChange(){
+
+  }
+
+  titleChange(event: any, id:number){
+    this.id = id
+    this.task = this.tasklistService.getTask(this.id);
+    const inputValue = event.target.value
+    this.task.title = inputValue
+    this.tasklistService.updateTask(this.id, this.task)
+  }
 
 }

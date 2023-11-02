@@ -2,16 +2,15 @@ import { Component, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Task } from '../task.model';
 import { TaskListService } from '../task-list.service';
-import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html',
-  styleUrls: ['./new-task.component.css']
+  styleUrls: ['./new-task.component.css'],
 })
 export class NewTaskComponent implements OnInit{
   @ViewChild('taskForm') taskListForm: NgForm;
