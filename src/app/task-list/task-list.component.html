@@ -4,17 +4,21 @@
       <Span>Filters: </Span>
       <select name="status" id="" placeholder="status">
         <option value="" selected disabled hidden>Status</option>
-        <option *ngFor="let task of tasks">{{task.status}} </option>
+        <option value="toDo">To Do</option>
+        <option value="InProgress">In Progress</option>
+        <option value="done">Done</option>
       </select>
 
       <!-- <input type="text"  placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/> -->
       <select id="date" name="date" >
         <option value="" selected disabled hidden>Date</option>
-        <option *ngFor="let task of tasks">{{task.date}} </option>
+        <option *ngFor="let task of tasks">{{ task.date | date:'mediumDate' }} </option>
       </select>
       <select class="priorityFilter">
         <option value="" selected disabled hidden>Priority</option>
-        <option *ngFor="let task of tasks">{{task.priority}} </option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
         </select>
     </div>
     <button type="button" style="cursor: pointer;" (click)='openNew()'>Add New Task</button>

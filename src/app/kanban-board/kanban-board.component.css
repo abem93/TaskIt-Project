@@ -24,6 +24,7 @@ h5{
   text-align: left;
   margin: 0;
   padding: 0;
+  width: 50rem;
 }
 
 
@@ -33,7 +34,7 @@ h5{
   background: #F9F9F9;
   flex-shrink: 0;
   width: 25.353375rem;
-  height: 49.3125rem;
+  min-height: 49.3125rem;
   margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -98,7 +99,7 @@ h5{
   flex-shrink: 0;
   color: #656339;
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;

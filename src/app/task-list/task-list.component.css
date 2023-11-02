@@ -38,6 +38,7 @@ h1{
   align-self: flex-end;
   border: none;
 }
+
 button{
   background: #48C15B;
   text-align: center;
@@ -57,7 +58,7 @@ h1{
 .tasklist-items{
   border: 1px solid #D2D2D2;
   border-radius: 10px;
-  height:  44.5625em;
+  min-height:  35rem;
 
 }
 .tasklist-headings, .tasklist-row{
