@@ -1,7 +1,7 @@
 h1{
   color: #000;
   font-family: 'Inter';
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -11,7 +11,7 @@ h1{
 h5{
   color: #A5A5A5;
   font-family: 'Inter';
-  font-size: 22px;
+  font-size: 1.375rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -32,9 +32,9 @@ h5{
   border: 1px solid #DCDCDC;
   background: #F9F9F9;
   flex-shrink: 0;
-  width: 25.353375em;
-  height: 49.3125em;
-  margin-right: 1.5em;
+  width: 25.353375rem;
+  height: 49.3125rem;
+  margin-right: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@ h5{
 .left-side>p{
   color: #000;
   font-family: 'Inter';
-  font-size: 22px;
+  font-size: 1.375rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -67,11 +67,11 @@ h5{
 .left-side span{
   color: #A5A5A5;
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 1em;
+  margin-right: 1rem;
 }
 
 .info{
@@ -80,7 +80,7 @@ h5{
 .info>p{
   color: #000;
   font-family: 'Inter';
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

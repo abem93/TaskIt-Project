@@ -16,6 +16,7 @@ export class TaskListComponent implements OnInit{
   @Input() task: Task;
   @Input() id: number;
   tasks: Task[];
+  taskListService: any;
 
   constructor(private tasklistService:TaskListService, private dialog: MatDialog){}
 
@@ -47,5 +48,8 @@ export class TaskListComponent implements OnInit{
   onEdit(id:number){
     this.openNew(id);
   }
+  // onUpdateTitle(id: number){
+  //   this.taskListService.updateTask(this.id, this.task)
+  // }
 
 }

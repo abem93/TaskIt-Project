@@ -4,16 +4,17 @@
       <Span>Filters: </Span>
       <select name="status" id="" placeholder="status">
         <option value="" selected disabled hidden>Status</option>
-        <option value="toDo">To Do</option>
-        <option value="InProgress">In Progress</option>
-        <option value="done">Done</option>
+        <option *ngFor="let task of tasks">{{task.status}} </option>
       </select>
-      <input type="text" name="date" placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/>
+
+      <!-- <input type="text"  placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/> -->
+      <select id="date" name="date" >
+        <option value="" selected disabled hidden>Date</option>
+        <option *ngFor="let task of tasks">{{task.date}} </option>
+      </select>
       <select class="priorityFilter">
         <option value="" selected disabled hidden>Priority</option>
-        <option value="low">Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
+        <option *ngFor="let task of tasks">{{task.priority}} </option>
         </select>
     </div>
     <button type="button" style="cursor: pointer;" (click)='openNew()'>Add New Task</button>
@@ -28,7 +29,8 @@
   </div>
   <hr>
   <div class="tasklist-row" *ngFor="let task of tasks; let i = index" [ngClass]="{'inProgress':task.status=='In Progress', 'done':task.status=='Done'}">
-    <p>{{ task.title }}</p>
+    <!-- <p > <input type="text" [ngModel]="task.title" (change)="titleChange()"></p> -->
+    <p >{{ task.title }}</p>
     <p>{{ (task.date | date:'mediumDate')}}</p>
     <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
       <option value="" selected disabled hidden>Priority</option>
