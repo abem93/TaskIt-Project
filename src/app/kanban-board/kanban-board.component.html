@@ -9,7 +9,7 @@
             <div class="left-side">
               <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
                   <option value="" selected disabled hidden>Priority</option>
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
@@ -20,7 +20,7 @@
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange()">
+            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
@@ -41,7 +41,7 @@
             <div class="left-side">
               <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
                   <option value="" selected disabled hidden>Priority</option>
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
@@ -52,7 +52,7 @@
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange()">
+            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
@@ -73,7 +73,7 @@
             <div class="left-side">
               <p>{{ task.title | slice: 0:13 }} </p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
                   <option value="" selected disabled hidden>Priority</option>
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
@@ -84,7 +84,7 @@
                 <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange()">
+            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>

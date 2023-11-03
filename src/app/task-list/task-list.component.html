@@ -37,7 +37,7 @@
     <p> <input type="text" [ngModel]="task.title" (change)="titleChange($event, i)" ></p>
     <!-- <p >{{ task.title }}</p> -->
     <p>{{ (task.date | date:'mediumDate')}}</p>
-    <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange()" >
+    <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
       <option value="" selected disabled hidden>Priority</option>
       <option value="Low">Low</option>
       <option value="Medium">Medium</option>
