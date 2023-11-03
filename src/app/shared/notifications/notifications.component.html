@@ -1,0 +1,3 @@
+<div class="notification" *ngIf="show" [ngClass]="{'new':action=='New Task Created', 'updated':action=='Task Updated', 'deleted':action=='Task Deleted'}" >
+  <span>{{ notificationText }}</span>
+</div>

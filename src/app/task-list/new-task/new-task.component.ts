@@ -25,9 +25,6 @@ export class NewTaskComponent implements OnInit{
 
   constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any ){
       // console.log(this.taskListService.getTask(this.data.id))
-      console.log(this.data.id)
-
-
   }
 
 

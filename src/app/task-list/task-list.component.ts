@@ -49,7 +49,11 @@ export class TaskListComponent implements OnInit{
     this.openNew(id);
   }
 
-  priorityChange(){
+  priorityChange(id: number){
+
+  }
+
+  statusChange(id: number){
 
   }
 

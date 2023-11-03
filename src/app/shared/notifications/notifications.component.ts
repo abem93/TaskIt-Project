@@ -1,13 +1,12 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { TaskListService } from 'src/app/task-list/task-list.service';
-import { Task } from 'src/app/task-list/task.model';
 
 @Component({
-  selector: 'app-main-view',
-  templateUrl: './main-view.component.html',
-  styleUrls: ['./main-view.component.css']
+  selector: 'app-notifications',
+  templateUrl: './notifications.component.html',
+  styleUrls: ['./notifications.component.css']
 })
-export class MainViewComponent implements OnInit {
+export class NotificationsComponent {
   notificationText = '';
   action:string;
   show = false;
@@ -37,5 +36,4 @@ export class MainViewComponent implements OnInit {
        }, 2500);
     }
     }
-
 }

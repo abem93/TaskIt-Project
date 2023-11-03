@@ -118,6 +118,7 @@ svg {
   text-align: center;
   padding: 1%;
   border: none;
+  outline: none;
   border-right: 6px solid transparent;
   border-radius: 4px;
   background: #fcf299;
