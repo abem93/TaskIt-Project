@@ -49,12 +49,20 @@ export class TaskListComponent implements OnInit{
     this.openNew(id);
   }
 
-  priorityChange(id: number){
-
+  priorityChange(event: any, id: number){
+    this.id = id
+    this.task = this.tasklistService.getTask(this.id);
+    const inputValue = event.target.value
+    this.task.priority = inputValue
+    this.tasklistService.updateTask(this.id, this.task)
   }
 
-  statusChange(id: number){
-
+  statusChange(event: any, id: number){
+    this.id = id
+    this.task = this.tasklistService.getTask(this.id);
+    const inputValue = event.target.value
+    this.task.status = inputValue
+    this.tasklistService.updateTask(this.id, this.task)
   }
 
   titleChange(event: any, id:number){

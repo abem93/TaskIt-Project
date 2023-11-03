@@ -66,9 +66,5 @@ export class TaskListService {
     this.taskListChanged.next(this.getTasks());
     this.notificationSubject.next(new Notification('Task Updated', updatedTask))
   }
-
-  notify(index:number){
-
-  }
 }
 

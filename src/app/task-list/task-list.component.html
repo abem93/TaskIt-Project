@@ -43,7 +43,7 @@
       <option value="Medium">Medium</option>
       <option value="High">High</option>
     </select></p>
-    <p><select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange()">
+    <p><select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
       <option value="To Do">To Do</option>
       <option value="In Progress">In Progress</option>
       <option value="Done">Done</option>
