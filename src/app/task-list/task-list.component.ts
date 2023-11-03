@@ -16,7 +16,6 @@ export class TaskListComponent implements OnInit{
   @Input() task: Task;
   @Input() id: number;
   tasks: Task[];
-  taskListService: any;
 
   constructor(private tasklistService:TaskListService, private dialog: MatDialog){}
 

@@ -52,9 +52,10 @@ export class TaskListService {
   }
 
   removeTask(id: number) {
+    this.notificationSubject.next(new Notification('Task Deleted', this.tasks[id]))
     this.tasks.splice(id, 1);
     this.taskListChanged.next(this.getTasks());
-    this.notificationSubject.next(new Notification('Task Deleted', this.tasks[id]))
+
   }
 
   getTasks() {
