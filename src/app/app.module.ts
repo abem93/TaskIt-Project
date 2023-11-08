@@ -20,7 +20,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { NotificationsComponent } from './shared/notifications/notifications.component';
-
+import {
+  CdkDragDrop,
+  CdkDrag,
+  CdkDropList,
+  CdkDropListGroup,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { NgFor } from '@angular/common';
 
 
 @NgModule({
@@ -50,6 +58,10 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
+    CdkDropListGroup,
+    CdkDropList,
+    NgFor,
+    CdkDrag
   ],
   providers: [],
   bootstrap: [AppComponent]

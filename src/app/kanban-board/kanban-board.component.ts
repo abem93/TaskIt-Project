@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task-list/task.model';
 import { TaskListService } from '../task-list/task-list.service';
+import {
+  CdkDragDrop,
+  CdkDrag,
+  CdkDropList,
+  CdkDropListGroup,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-kanban-board',
@@ -11,8 +19,22 @@ export class KanbanBoardComponent implements OnInit{
   id:number;
   task: Task;
   tasks: Task[];
+todo: any;
 
   constructor(private tasklistService:TaskListService){}
+
+  drop(event: CdkDragDrop<Task[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
 
   ngOnInit(): void {
     this.tasks = this.tasklistService.getTasks();

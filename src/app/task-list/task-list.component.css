@@ -156,6 +156,7 @@ svg {
   font-weight: 600;
   line-height: normal;
   align-items: center;
+  background: none;
   border: none;
   outline: none;
   appearance: none;

@@ -80,6 +80,7 @@ h5{
 }
 .info select, .info option{
   color: #000;
+  background: none;
   font-family: 'Inter';
   font-size: 1rem;
   font-style: normal;

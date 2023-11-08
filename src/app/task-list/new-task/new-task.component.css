@@ -56,6 +56,11 @@ h3 {
 }
 select::before{
   color: #a5a5a5;;
+
+}
+select{
+  background: none;
+  outline: none;
 }
 
 .buttons {

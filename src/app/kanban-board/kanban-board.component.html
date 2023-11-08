@@ -5,22 +5,38 @@
     <div class="column">
       <ng-container *ngFor="let task of tasks; let i = index">
         <ng-container *ngIf="task.status == 'To Do'">
-          <div class="taskCard" >
+          <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice: 0:13 }} </p>
+              <p>{{ task.title | slice : 0 : 13 }}</p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
-                  <option value="" selected disabled hidden>Priority</option>
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="High">High</option>
-                </select></p>
+                <span>Priority: </span>
+                <p>
+                  <select
+                    name="priority"
+                    class="priority"
+                    id="priority"
+                    [(ngModel)]="task.priority"
+                    (change)="priorityChange($event, i)"
+                  >
+                    <option value="" selected disabled hidden>Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </p>
               </div>
               <div class="info">
-                <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
+                <span>Due Date: </span>
+                <p>{{ task.date | date : "MMMM d" }}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
+            <select
+              name="status"
+              class="status"
+              id="status"
+              [(ngModel)]="task.status"
+              (change)="statusChange($event, i)"
+            >
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
@@ -30,29 +46,44 @@
       </ng-container>
     </div>
   </div>
-
 
   <div class="inProgress">
     <h5>In Progress</h5>
     <div class="column">
       <ng-container *ngFor="let task of tasks; let i = index">
         <ng-container *ngIf="task.status == 'In Progress'">
-          <div class="taskCard" >
+          <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice: 0:13 }} </p>
+              <p>{{ task.title | slice : 0 : 13 }}</p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
-                  <option value="" selected disabled hidden>Priority</option>
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="High">High</option>
-                </select></p>
+                <span>Priority: </span>
+                <p>
+                  <select
+                    name="priority"
+                    class="priority"
+                    id="priority"
+                    [(ngModel)]="task.priority"
+                    (change)="priorityChange($event, i)"
+                  >
+                    <option value="" selected disabled hidden>Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </p>
               </div>
               <div class="info">
-                <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
+                <span>Due Date: </span>
+                <p>{{ task.date | date : "MMMM d" }}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
+            <select
+              name="status"
+              class="status"
+              id="status"
+              [(ngModel)]="task.status"
+              (change)="statusChange($event, i)"
+            >
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
@@ -63,28 +94,43 @@
     </div>
   </div>
 
-
   <div class="Done">
     <h5>Done</h5>
     <div class="column">
       <ng-container *ngFor="let task of tasks; let i = index">
         <ng-container *ngIf="task.status == 'Done'">
-          <div class="taskCard" >
+          <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice: 0:13 }} </p>
+              <p>{{ task.title | slice : 0 : 13 }}</p>
               <div class="info">
-                <span>Priority: </span> <p><select name="priority" class="priority" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" >
-                  <option value="" selected disabled hidden>Priority</option>
-                  <option value="Low">Low</option>
-                  <option value="Medium">Medium</option>
-                  <option value="High">High</option>
-                </select></p>
+                <span>Priority: </span>
+                <p>
+                  <select
+                    name="priority"
+                    class="priority"
+                    id="priority"
+                    [(ngModel)]="task.priority"
+                    (change)="priorityChange($event, i)"
+                  >
+                    <option value="" selected disabled hidden>Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </p>
               </div>
               <div class="info">
-                <span>Due Date: </span> <p>{{task.date | date: 'MMMM d'}}</p>
+                <span>Due Date: </span>
+                <p>{{ task.date | date : "MMMM d" }}</p>
               </div>
             </div>
-            <select name="status" class="status" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)">
+            <select
+              name="status"
+              class="status"
+              id="status"
+              [(ngModel)]="task.status"
+              (change)="statusChange($event, i)"
+            >
               <option value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
@@ -95,4 +141,3 @@
     </div>
   </div>
 </div>
-
