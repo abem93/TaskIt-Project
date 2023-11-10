@@ -20,11 +20,12 @@ export class NewTaskComponent implements OnInit{
   isEditMode: boolean = false;
   editedTask: Task = new Task('','','','','');
   formSubmitted = false;
-
+  boredTitle: string = null
 
 
   constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any ){
       // console.log(this.taskListService.getTask(this.data.id))
+      // console.log(data)
   }
 
 
@@ -35,6 +36,9 @@ export class NewTaskComponent implements OnInit{
       this.id = this.data.id
       this.editedTask = this.taskListService.getTask(this.id)
       this.isEditMode= true;
+    }else if(this.data.bored){
+      this.boredTitle = this.data.bored
+      this.editedTask.title = this.boredTitle
     }else{
       this.isEditMode = false
     }

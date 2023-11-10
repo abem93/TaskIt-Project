@@ -7,6 +7,7 @@ import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 import { MainViewComponent } from './shared/main-view/main-view.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
+import { BoredComponent } from './bored/bored.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full' },
@@ -17,8 +18,9 @@ const routes: Routes = [
     path: 'tasks', component: MainViewComponent,
     children:[
       { path: '', redirectTo: '/tasks/list', pathMatch: 'full' },
-      {path: 'list', component: TaskListComponent},
-      {path: 'kanban', component: KanbanBoardComponent}
+      { path: 'list', component: TaskListComponent },
+      { path: 'kanban', component: KanbanBoardComponent },
+      { path: 'bored', component: BoredComponent }
     ]},
 
 ]

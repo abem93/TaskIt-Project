@@ -1,0 +1,12 @@
+<section class="title">
+  <h1>I'm Bored</h1>
+  <span>Let's Find Something to do.</span>
+</section>
+<div >
+  <button class="generate" (click)="generateTask()">{{!boredTask ? 'Generate Task': 'Regenerate Task'}}</button>
+
+  <section class="boredTask" *ngIf="boredTask">
+    <p>{{ boredTask }}</p>
+    <span (click)="addTask()"> &#43; </span>
+  </section>
+</div>

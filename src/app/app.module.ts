@@ -29,6 +29,8 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { NgFor } from '@angular/common';
+import { BoredComponent } from './bored/bored.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { NgFor } from '@angular/common';
     KanbanBoardComponent,
     MainViewComponent,
     NotificationsComponent,
+    BoredComponent,
 
   ],
   imports: [
@@ -61,7 +64,8 @@ import { NgFor } from '@angular/common';
     CdkDropListGroup,
     CdkDropList,
     NgFor,
-    CdkDrag
+    CdkDrag,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
