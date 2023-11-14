@@ -1,9 +1,10 @@
 import { Component, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Task } from '../task.model';
-import { TaskListService } from '../task-list.service';
+import { Task } from '../../task-list/task.model';
+import { TaskListService } from '../../services/task-list.service';
 import { Subscription } from 'rxjs';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HttpService } from 'src/app/services/http.service';
 
 
 
@@ -23,7 +24,7 @@ export class NewTaskComponent implements OnInit{
   boredTitle: string = null
 
 
-  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any ){
+  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService ){
       // console.log(this.taskListService.getTask(this.data.id))
       // console.log(data)
   }
@@ -59,5 +60,6 @@ export class NewTaskComponent implements OnInit{
       });
     }
     this.isEditMode = false
+    this.httpService.saveBooksToFirebase();
   }
 }

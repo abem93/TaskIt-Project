@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task.model';
+import { Task } from '../task-list/task.model';
 import { Subject } from 'rxjs';
-import { Notification } from './notification.model';
+import { Notification } from '../shared/notifications/notification.model';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,30 +13,9 @@ export class TaskListService {
   startedEditing = new Subject<number>();
   notificationSubject = new Subject<Notification>();
 
+  constructor(){}
 
-  private tasks: Task[] = [
-    new Task(
-      'Run',
-      '',
-      '8/25/2024',
-      'Low',
-      'To Do'
-    ),
-    new Task(
-      'Homework',
-      '',
-      '9/2/2026',
-      'Medium',
-      'In Progress'
-    ),
-    new Task(
-      'Gym',
-      '',
-      '12/25/2023',
-      'High',
-      'Done'
-    )
-  ]
+  private tasks: Task[] = []
 
   saveTask(task: Task) {
     this.tasks.push(task);
@@ -60,6 +40,11 @@ export class TaskListService {
 
   getTasks() {
     return [...this.tasks];
+  }
+
+  setTasks(tasks: Task[]){
+    this.tasks = tasks;
+    this.taskListChanged.next(this.getTasks())
   }
 
   updateTask(index: number, updatedTask) {

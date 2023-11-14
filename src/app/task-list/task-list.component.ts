@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Task } from './task.model';
-import { TaskListService } from './task-list.service';
+import { TaskListService } from '../services/task-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NewTaskComponent } from './new-task/new-task.component';
+import { NewTaskComponent } from '../shared/new-task/new-task.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-task-list',
@@ -17,7 +18,7 @@ export class TaskListComponent implements OnInit{
   @Input() id: number;
   tasks: Task[];
 
-  constructor(private tasklistService:TaskListService, private dialog: MatDialog){}
+  constructor(private tasklistService:TaskListService, private dialog: MatDialog, private httpService: HttpService){}
 
   openNew(id?:number):void {
     this.id = id
@@ -30,6 +31,7 @@ export class TaskListComponent implements OnInit{
     });
   }
   ngOnInit(): void {
+    this.httpService.fetchBooksFromFirebase();
     this.tasks = this.tasklistService.getTasks();
     this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
   }

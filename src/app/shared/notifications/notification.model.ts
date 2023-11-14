@@ -1,4 +1,4 @@
-import { Task } from "./task.model";
+import { Task } from "../../task-list/task.model";
 
 export class Notification {
   constructor(

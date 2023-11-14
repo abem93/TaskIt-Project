@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task-list/task.model';
-import { TaskListService } from '../task-list/task-list.service';
+import { TaskListService } from '../services/task-list.service';
 import {
   CdkDragDrop,
   CdkDrag,

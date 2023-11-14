@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { TaskListService } from '../task-list.service';
+import { TaskListService } from '../../services/task-list.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Task } from '../task.model';
 

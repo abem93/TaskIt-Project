@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NewTaskComponent } from '../task-list/new-task/new-task.component';
+import { NewTaskComponent } from '../shared/new-task/new-task.component';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

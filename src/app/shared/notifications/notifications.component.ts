@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TaskListService } from 'src/app/task-list/task-list.service';
+import { TaskListService } from 'src/app/services/task-list.service';
 
 @Component({
   selector: 'app-notifications',
@@ -19,8 +19,8 @@ export class NotificationsComponent {
       })
       this.taskListService.notificationSubject.subscribe((notification)=>{
         this.action = notification.action
-        console.log(this.action)
-        console.log(notification.task)
+        // console.log(this.action)
+        // console.log(notification.task)
         this.notificationText = `${this.action}:  "${notification.task.title}"`;
 
         this.show = true
