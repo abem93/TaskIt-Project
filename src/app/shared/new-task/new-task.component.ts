@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Task } from '../../task-list/task.model';
 import { TaskListService } from '../../services/task-list.service';
@@ -14,6 +14,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./new-task.component.css'],
 })
 export class NewTaskComponent implements OnInit{
+  encapsulation: ViewEncapsulation.None
   @ViewChild('taskForm') taskListForm: NgForm;
   id: number;
   task: Task = new Task('','','','','');

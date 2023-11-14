@@ -27,7 +27,7 @@ export class HttpService {
 
   // fetch data from Firebase - REQUEST
   fetchBooksFromFirebase() {
-    this.http.get(FIREBASE_URL).subscribe((data: Task[]) => {
+    this.http.get<Task[]>(FIREBASE_URL).subscribe((data) => {
       console.log('DATA from FB: ', data);
       this.tasklistService.setTasks(data ?? []);
     });

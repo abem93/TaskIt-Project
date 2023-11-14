@@ -6,6 +6,7 @@ import { NewTaskComponent } from '../shared/new-task/new-task.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { HttpService } from '../services/http.service';
+import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.component';
 
 @Component({
   selector: 'app-task-list',
@@ -74,6 +75,15 @@ export class TaskListComponent implements OnInit{
     this.task.title = inputValue
     this.tasklistService.updateTask(this.id, this.task);
     this.httpService.saveBooksToFirebase();
+  }
+  onView(id: number){
+    const dialogRef = this.dialog.open(DetailedViewComponent, {
+      height: '30em',
+      width: '50em',
+      data: {
+        id: id
+      }
+    });
   }
 
 }
