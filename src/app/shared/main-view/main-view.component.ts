@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 import { TaskListService } from 'src/app/services/task-list.service';
 import { Task } from 'src/app/task-list/task.model';
 
@@ -7,7 +8,11 @@ import { Task } from 'src/app/task-list/task.model';
   templateUrl: './main-view.component.html',
   styleUrls: ['./main-view.component.css']
 })
-export class MainViewComponent {
+export class MainViewComponent implements OnInit {
 
+  constructor(private httpService: HttpService){}
 
+  ngOnInit(): void {
+    this.httpService.fetchBooksFromFirebase();
+  }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Task } from '../task-list/task.model';
 import { Subject } from 'rxjs';
 import { Notification } from '../shared/notifications/notification.model';
-import { HttpService } from './http.service';
+
 
 @Injectable({
   providedIn: 'root'

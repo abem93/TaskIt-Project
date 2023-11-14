@@ -31,7 +31,6 @@ export class TaskListComponent implements OnInit{
     });
   }
   ngOnInit(): void {
-    this.httpService.fetchBooksFromFirebase();
     this.tasks = this.tasklistService.getTasks();
     this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
   }
@@ -55,7 +54,8 @@ export class TaskListComponent implements OnInit{
     this.task = this.tasklistService.getTask(this.id);
     const inputValue = event.target.value
     this.task.priority = inputValue
-    this.tasklistService.updateTask(this.id, this.task)
+    this.tasklistService.updateTask(this.id, this.task);
+    this.httpService.saveBooksToFirebase();
   }
 
   statusChange(event: any, id: number){
@@ -63,7 +63,8 @@ export class TaskListComponent implements OnInit{
     this.task = this.tasklistService.getTask(this.id);
     const inputValue = event.target.value
     this.task.status = inputValue
-    this.tasklistService.updateTask(this.id, this.task)
+    this.tasklistService.updateTask(this.id, this.task);
+    this.httpService.saveBooksToFirebase();
   }
 
   titleChange(event: any, id:number){
@@ -71,7 +72,8 @@ export class TaskListComponent implements OnInit{
     this.task = this.tasklistService.getTask(this.id);
     const inputValue = event.target.value
     this.task.title = inputValue
-    this.tasklistService.updateTask(this.id, this.task)
+    this.tasklistService.updateTask(this.id, this.task);
+    this.httpService.saveBooksToFirebase();
   }
 
 }

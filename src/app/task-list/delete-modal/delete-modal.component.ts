@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { TaskListService } from '../../services/task-list.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Task } from '../task.model';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-delete-modal',
@@ -11,7 +12,7 @@ import { Task } from '../task.model';
 export class DeleteModalComponent implements OnInit {
   id: number;
   task: Task;
-  constructor(private tasklistService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any){
+  constructor(private tasklistService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService){
     this.id = this.data.id
   }
 
@@ -20,6 +21,7 @@ export class DeleteModalComponent implements OnInit {
   }
   onDelete(){
     this.tasklistService.removeTask(this.id);
+    this.httpService.saveBooksToFirebase();
   }
 
 

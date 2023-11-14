@@ -9,6 +9,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-kanban-board',
@@ -21,7 +22,7 @@ export class KanbanBoardComponent implements OnInit{
   tasks: Task[];
 todo: any;
 
-  constructor(private tasklistService:TaskListService){}
+  constructor(private tasklistService:TaskListService, private httpService: HttpService){}
 
   drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
@@ -45,7 +46,8 @@ todo: any;
     this.task = this.tasklistService.getTask(this.id);
     const inputValue = event.target.value
     this.task.priority = inputValue
-    this.tasklistService.updateTask(this.id, this.task)
+    this.tasklistService.updateTask(this.id, this.task);
+    this.httpService.saveBooksToFirebase();
   }
 
   statusChange(event: any, id: number){
@@ -53,6 +55,7 @@ todo: any;
     this.task = this.tasklistService.getTask(this.id);
     const inputValue = event.target.value
     this.task.status = inputValue
-    this.tasklistService.updateTask(this.id, this.task)
+    this.tasklistService.updateTask(this.id, this.task);
+    this.httpService.saveBooksToFirebase();
   }
 }
