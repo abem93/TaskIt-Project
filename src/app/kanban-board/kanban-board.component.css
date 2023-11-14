@@ -43,6 +43,7 @@ h5{
 }
 
 .taskCard{
+  position: relative;
   margin-top: 5%;
   border-radius: 8px;
   border: 1px solid #DCDCDC;
@@ -120,4 +121,10 @@ h5{
 .Done .status{
   border-radius: 4px;
   background: #A7FC99;
+}
+
+.detailView{
+  position: absolute;
+  right: 1.5rem;
+  bottom: 2.32rem;
 }

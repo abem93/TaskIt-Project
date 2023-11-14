@@ -30,7 +30,8 @@ import {
 } from '@angular/cdk/drag-drop';
 import { NgFor } from '@angular/common';
 import { BoredComponent } from './bored/bored.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DetailedViewComponent } from './shared/detailed-view/detailed-view.component'
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http'
     MainViewComponent,
     NotificationsComponent,
     BoredComponent,
+    DetailedViewComponent,
 
   ],
   imports: [

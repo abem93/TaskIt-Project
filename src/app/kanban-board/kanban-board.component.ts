@@ -10,6 +10,8 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { HttpService } from '../services/http.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.component';
 
 @Component({
   selector: 'app-kanban-board',
@@ -22,7 +24,7 @@ export class KanbanBoardComponent implements OnInit{
   tasks: Task[];
 todo: any;
 
-  constructor(private tasklistService:TaskListService, private httpService: HttpService){}
+  constructor(private tasklistService:TaskListService,private dialog: MatDialog, private httpService: HttpService){}
 
   drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
@@ -58,4 +60,13 @@ todo: any;
     this.tasklistService.updateTask(this.id, this.task);
     this.httpService.saveBooksToFirebase();
   }
+  onView(id:number){
+    const dialogRef = this.dialog.open(DetailedViewComponent, {
+      height: '30em',
+      width: '50em',
+      data: {
+        id: id
+      }
+    });
+}
 }
