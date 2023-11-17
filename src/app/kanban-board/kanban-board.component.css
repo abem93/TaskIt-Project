@@ -67,13 +67,6 @@ h5{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-overflow:initial;
-  overflow: hidden;
-  text-overflow:inherit;
-  text-wrap: nowrap;
-}
-.left-side>p:hover {
-  overflow: visible;
 }
 .left-side span{
   color: #A5A5A5;

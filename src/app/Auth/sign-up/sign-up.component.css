@@ -9,6 +9,7 @@
 }
 
 h1 {
+  display: inline;
   font-family: 'Inter';
   font-size: 32px;
   font-style: normal;
@@ -17,15 +18,15 @@ h1 {
   margin-left: 2%;
   background: linear-gradient(
     to right,
-    black 40%,
-    #48C15B 40% 58%,
-    black 58% 100%
+    black 61%,
+    #48C15B 60% 90%,
+    black 80% 100%
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
+
 p{
   margin-left: 3%;
 }
