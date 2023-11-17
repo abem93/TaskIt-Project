@@ -1,1 +1,23 @@
-<p>detailed-view works!</p>
+
+<div class="status" [ngClass]="{'inProgress':task.status==='In Progress', 'done':task.status==='Done'}">
+  <span class="dismiss" mat-button mat-dialog-close>&times;</span>
+  <p>{{task.status}}</p>
+</div>
+<div class="container">
+  <div class="taskInfo">
+    <h1>{{task.title}}</h1>
+    <span>Date Due:</span>
+    <p>{{task.date | date:'longDate'}}</p>
+    <span *ngIf="task.description">Description</span>
+    <p>{{task.description}}</p>
+    <span>Priority</span>
+    <p>{{task.priority}}</p>
+  </div>
+  <div class="buttons">
+    <button type="button" class="edit"(click)="onEdit()"  mat-button mat-dialog-close>Edit</button>
+    <button type="button" class="delete" (click)="onDelete()" mat-button mat-dialog-close>Delete</button>
+  </div>
+</div>
+
+
+

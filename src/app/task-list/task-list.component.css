@@ -59,6 +59,7 @@ h1 {
   border: 1px solid #d2d2d2;
   border-radius: 10px;
   min-height: 35em;
+  height: 74vh;
 }
 .tasklist-headings,
 .tasklist-row {
@@ -151,7 +152,7 @@ svg {
   margin-bottom: 0;
   padding-bottom: 6%;
   height: 2.3em;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -161,7 +162,7 @@ svg {
   outline: none;
   appearance: none;
   font-family: "Inter";
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -176,9 +177,10 @@ svg {
   margin-bottom: 0;
   height: 2.3em;
   width: 13.75em;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   align-items: center;
 }
+

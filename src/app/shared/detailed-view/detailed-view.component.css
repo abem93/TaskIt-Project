@@ -1,0 +1,76 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dismiss{
+  position: absolute;
+  right: 5%;
+  font-size: 2rem;
+}
+
+.taskInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 0 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+}
+
+.taskInfo span{
+  font-weight: bolder;
+}
+
+.status{
+  text-align: center;
+  padding: 3% 0 1% 0;
+  border: none;
+  border-right: 6px solid transparent;
+  background: #FCF299;
+  color: #656339;
+  font-family: 'Inter';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.status.inProgress{
+  border-radius: 4px;
+  background: #99F6FC;
+}
+
+.done.status{
+  border-radius: 4px;
+  background: #A7FC99;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+button.edit{
+  background:#b5b5b5;
+  width: 30%;
+  text-align: center;
+  border: none;
+  border-radius: 9px;
+  padding: 4% 1%;
+  color: white;
+
+}
+
+
+button.delete{
+  background: #FF6969;
+  width: 30%;
+  text-align: center;
+  border: none;
+  border-radius: 9px;
+  padding: 4% 1%;
+  color: white;
+}

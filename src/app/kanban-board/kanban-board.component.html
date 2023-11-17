@@ -7,7 +7,7 @@
         <ng-container *ngIf="task.status == 'To Do'">
           <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice : 0 : 15 }}</p>
+              <p>{{ task.title }}</p>
               <div class="info">
                 <span>Priority: </span>
                 <p>
@@ -57,7 +57,7 @@
         <ng-container *ngIf="task.status == 'In Progress'">
           <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice : 0 : 15 }}</p>
+              <p>{{ task.title  }}</p>
               <div class="info">
                 <span>Priority: </span>
                 <p>
@@ -107,7 +107,7 @@
         <ng-container *ngIf="task.status == 'Done'">
           <div class="taskCard">
             <div class="left-side">
-              <p>{{ task.title | slice : 0 : 15 }}</p>
+              <p>{{ task.title | slice : 0 : 22 }}</p>
               <div class="info">
                 <span>Priority: </span>
                 <p>

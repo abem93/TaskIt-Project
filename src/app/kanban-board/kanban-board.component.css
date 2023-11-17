@@ -1,7 +1,7 @@
 h1{
   color: #000;
   font-family: 'Inter';
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -11,7 +11,7 @@ h1{
 h5{
   color: #A5A5A5;
   font-family: 'Inter';
-  font-size: 1.375rem;
+  font-size: 1.375em;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -24,7 +24,7 @@ h5{
   text-align: left;
   margin: 0;
   padding: 0;
-  width: 80%;
+  width: 90%;
 }
 
 
@@ -33,7 +33,7 @@ h5{
   border: 1px solid #DCDCDC;
   background: #F9F9F9;
   flex-shrink: 0;
-  width: 23em;
+  width: 25vw;
   height: 80vh;
   margin-right: 1.5em;
   display: flex;
@@ -48,7 +48,7 @@ h5{
   border-radius: 8px;
   border: 1px solid #DCDCDC;
   background: #FFFF;
-  width: 95%;
+  width: 94%;
   padding: 5%;
   display: flex;
   justify-content: space-between;
@@ -60,30 +60,42 @@ h5{
 
 .left-side>p{
   color: #000;
+  width:100%;
+  height: 1.5em;
   font-family: 'Inter';
-  font-size: 1.375rem;
+  font-size: 1.375em;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-overflow:initial;
+  overflow: hidden;
+  text-overflow:inherit;
+  text-wrap: nowrap;
+}
+.left-side>p:hover {
+  overflow: visible;
 }
 .left-side span{
   color: #A5A5A5;
   font-family: 'Inter';
-  font-size: 1rem;
+  font-size: 1em;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 1rem;
+  margin-right: 1em;
 }
 
 .info{
   display: flex;
 }
+.info p{
+  font-size: .80em;
+}
 .info select, .info option{
   color: #000;
   background: none;
   font-family: 'Inter';
-  font-size: 1rem;
+  font-size: 1em;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -101,12 +113,12 @@ h5{
   border-right: 6px solid transparent;
   border-radius: 4px;
   background: #FCF299;
-  width: 5.375rem;
-  height: 1.8rem;
+  width: 5.375em;
+  height: 1.8em;
   flex-shrink: 0;
   color: #656339;
   font-family: 'Inter';
-  font-size: 1rem;
+  font-size: 1em;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -115,7 +127,7 @@ h5{
 .inProgress .status{
   border-radius: 4px;
   background: #99F6FC;
-  width: 8rem;
+  width: 8em;
 }
 
 .Done .status{
@@ -125,6 +137,6 @@ h5{
 
 .detailView{
   position: absolute;
-  right: 1.5rem;
-  bottom: 2.32rem;
+  right: 1.5em;
+  bottom: 2.32em;
 }
