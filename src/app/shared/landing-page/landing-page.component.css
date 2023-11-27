@@ -5,12 +5,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  width: 63.375em;
-  height: 59em;
+  width: 50%;
   border: 1px solid #E8E8E8;
   background: #FAFAFA;
-  margin: 5.375em 22.3125em;
-  padding: 1px;
+  margin: 2em 22.3125em;
+  padding: 2% 0;
 }
 .container *{
   margin: 1% 0;
@@ -34,7 +33,7 @@ h1{
 
 }
 p{
-  font-size: 1.4375em;
+  font-size: 1em;
   width: 70%;
 }
 
@@ -44,8 +43,7 @@ span{
 }
 
 img{
-  width: 49.8125em;
-  height: 35.5625em;
+  width: 80%;
 }
 div{
   text-align: center;
@@ -54,14 +52,18 @@ button{
   background: #48C15B;
   color: white;
   border-radius: 8px;
-  padding:  0;
-  height: 2.75em;
-  width: 10em;
+  padding:  1% 10%;
   border: none;
-  font-family: Inter;
-  font-size: 1.4375em;
-  font-weight: 700;
+  font-family:'Inter';
+  font-size: 1em;
+  font-weight: 600;
   text-align: center;
+}
+
+button:hover{
+  background: transparent;
+  color: #48C15B;
+  border: 1.2px solid #48C15B;
 }
 .singupButtons *{
   margin: 0.71875em;

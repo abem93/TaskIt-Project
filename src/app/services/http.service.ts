@@ -10,6 +10,8 @@ const FIREBASE_URL = environment.firebaseUrl;
   providedIn: 'root',
 })
 export class HttpService {
+  userData = JSON.parse(localStorage.getItem('userData'))
+
   constructor(
     private tasklistService: TaskListService,
     private http: HttpClient
@@ -17,19 +19,29 @@ export class HttpService {
 
   // * Methods
 
-  saveBooksToFirebase() {
+  saveTasksToFirebase() {
     const myTasks = this.tasklistService.getTasks();
 
-    this.http.put(FIREBASE_URL, myTasks).subscribe((data) => {
+    this.http.put(FIREBASE_URL+ 'users/' + this.userData.id + '/tasks.json', myTasks).subscribe((data) => {
       console.log(data);
     });
   }
 
   // fetch data from Firebase - REQUEST
-  fetchBooksFromFirebase() {
-    this.http.get<Task[]>(FIREBASE_URL).subscribe((data) => {
+  fetchTasksFromFirebase() {
+    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + this.userData.id + '/tasks.json').subscribe((data) => {
+      console.log('DATA from FB: ', data);
+      this.tasklistService.setTasks(data ?? []);
+    });
+  }
+
+  //fetch User
+  fetchUserFromFirebase() {
+    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + this.userData.id + '/profile.json').subscribe((data) => {
       console.log('DATA from FB: ', data);
       this.tasklistService.setTasks(data ?? []);
     });
   }
 }
+
+

@@ -60,6 +60,6 @@ export class NewTaskComponent implements OnInit{
       });
     }
     this.isEditMode = false
-    this.httpService.saveBooksToFirebase();
+    this.httpService.saveTasksToFirebase();
   }
 }

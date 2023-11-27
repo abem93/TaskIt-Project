@@ -1,21 +1,29 @@
 <div class="container">
-  <div><h1>Welcome to TASKIT</h1></div>
+  <div><h1>Welcome to TASKIT!</h1></div>
   <p>Sign up to get things done.</p>
-  <form>
-    <label for="fname">First Name</label><br>
-    <input type="text" id="Fname" name="Fname"><br>
-    <label for="fname">Last Name</label><br>
-    <input type="text" id="Lname" name="Lname"><br>
-    <label for="email">Email</label><br>
-    <input type="email" id="email" name="email"><br>
-    <label for="password">Password</label><br>
-    <input type="password" id="password" name="password"><br>
+  <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" id="signupForm">
+    <label for="fname">First Name</label><br />
+    <input type="text" id="Fname" name="Fname" ngModel required /><br />
+    <label for="fname">Last Name</label><br />
+    <input type="text" id="Lname" name="Lname" ngModel required /><br />
+    <label for="email">Email</label><br />
+    <input type="email" id="email" ngModel name="email" required email /><br />
+    <label for="password">Password</label><br />
+    <input
+      type="password"
+      id="password"
+      name="password"
+      ngModel
+      required
+      minlength="6"
+    /><br />
   </form>
 
   <div class="links">
     <p>Have an account?</p>
-    <a style="cursor: pointer;" routerLink="/login">Login</a>
-    <button type="submit">Submit</button>
+    <a style="cursor: pointer" routerLink="/login">Login</a>
+    <button type="submit" form="signupForm" [disabled]="!signupForm.valid">
+      Submit
+    </button>
   </div>
-
 </div>

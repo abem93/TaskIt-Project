@@ -49,7 +49,7 @@ todo: any;
     const inputValue = event.target.value
     this.task.priority = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveBooksToFirebase();
+    this.httpService.saveTasksToFirebase();
   }
 
   statusChange(event: any, id: number){
@@ -58,7 +58,7 @@ todo: any;
     const inputValue = event.target.value
     this.task.status = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveBooksToFirebase();
+    this.httpService.saveTasksToFirebase();
   }
   onView(id:number){
     const dialogRef = this.dialog.open(DetailedViewComponent, {

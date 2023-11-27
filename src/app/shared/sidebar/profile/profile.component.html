@@ -4,9 +4,9 @@
   </div>
   <div class="info">
     <h3>Name</h3>
-    <p>Email@gmail.com</p>
+    <p>{{userEmail}}</p>
   </div>
   <div>
-    <img src="assets/icons/profile-dash-indicator.svg" alt="log out" class="logout" routerLink="" style="cursor: pointer;">
+    <img src="assets/icons/profile-dash-indicator.svg" alt="log out" class="logout" (click)="onLogout()" style="cursor: pointer;">
   </div>
 </div>

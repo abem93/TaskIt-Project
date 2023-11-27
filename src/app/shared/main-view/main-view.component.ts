@@ -13,6 +13,6 @@ export class MainViewComponent implements OnInit {
   constructor(private httpService: HttpService){}
 
   ngOnInit(): void {
-    this.httpService.fetchBooksFromFirebase();
+    this.httpService.fetchTasksFromFirebase();
   }
 }

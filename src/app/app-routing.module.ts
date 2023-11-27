@@ -8,6 +8,7 @@ import { MainViewComponent } from './shared/main-view/main-view.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { BoredComponent } from './bored/bored.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'register', component: SignUpComponent},
   {path: 'login', component: LogInComponent},
   {
-    path: 'tasks', component: MainViewComponent,
+    path: 'tasks', component: MainViewComponent, canActivate: [AuthGuard],
     children:[
       { path: '', redirectTo: '/tasks/list', pathMatch: 'full' },
       { path: 'list', component: TaskListComponent },

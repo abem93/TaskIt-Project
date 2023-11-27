@@ -21,7 +21,7 @@ export class DeleteModalComponent implements OnInit {
   }
   onDelete(){
     this.tasklistService.removeTask(this.id);
-    this.httpService.saveBooksToFirebase();
+    this.httpService.saveTasksToFirebase();
   }
 
 
