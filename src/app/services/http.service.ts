@@ -3,6 +3,9 @@ import { Injectable } from "@angular/core";
 import { TaskListService } from "./task-list.service";
 import { Task } from "../task-list/task.model";
 import { environment } from "src/environments/enviroment";
+import { BehaviorSubject, Subject } from "rxjs";
+
+import { AuthService } from "../auth/auth.service";
 
 const FIREBASE_URL = environment.firebaseUrl;
 
@@ -10,12 +13,16 @@ const FIREBASE_URL = environment.firebaseUrl;
   providedIn: 'root',
 })
 export class HttpService {
-  userData = JSON.parse(localStorage.getItem('userData'))
+  userData = this.auth.currentUser.value
+
 
   constructor(
     private tasklistService: TaskListService,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient,
+    private auth: AuthService
+  ) {
+
+  }
 
   // * Methods
 
@@ -35,11 +42,11 @@ export class HttpService {
     });
   }
 
-  //fetch User
-  fetchUserFromFirebase() {
-    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + this.userData.id + '/profile.json').subscribe((data) => {
-      console.log('DATA from FB: ', data);
-      this.tasklistService.setTasks(data ?? []);
+  // fetch User
+  fetchUserFromFirebase(data) {
+    this.http.get(FIREBASE_URL+ 'users/' + data.localId + '/profile.json').subscribe((data) => {
+      console.log(data)
+      localStorage.setItem('userProfile', JSON.stringify(data))
     });
   }
 }

@@ -16,10 +16,8 @@ export class SignUpComponent {
   error:string = null;
   constructor(private authService: AuthService, private router: Router, private http: HttpClient) {}
   FIREBASE_URL = environment.firebaseUrl;
-  userData = JSON.parse(localStorage.getItem('userData'))
   profile: {
-    name,
-    picture?,
+    name
   }
 
   onSubmit(form: NgForm) {
@@ -41,7 +39,7 @@ export class SignUpComponent {
         console.log(resData);
         this.router.navigate(['/login']);
         this.profile = {name}
-        this.http.put(this.FIREBASE_URL+ 'users/' + this.userData.id + '/profile.json', this.profile).subscribe((data) => {
+        this.http.put(this.FIREBASE_URL+ 'users/' + resData.localId + '/profile.json', this.profile).subscribe((data) => {
           return data
         });
       },

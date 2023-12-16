@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { AuthResponseData, AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-log-in',
@@ -11,7 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LogInComponent implements OnInit {
   error:string = null;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private httpService: HttpService) {}
 
   ngOnInit(): void {
 
@@ -24,15 +25,12 @@ export class LogInComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
 
-    let authObs: Observable<AuthResponseData>;
-
-
-
-    authObs = this.authService.login(email, password);
+    let authObs: Observable<AuthResponseData> = this.authService.login(email, password);
 
     authObs.subscribe(
       (resData) => {
         console.log(resData);
+        this.httpService.fetchUserFromFirebase(resData)
         this.router.navigate(['/tasks']);
       },
       (errorMessage) => {
@@ -40,7 +38,6 @@ export class LogInComponent implements OnInit {
         this.error = errorMessage
       }
     );
-
     form.reset();
   }
 }

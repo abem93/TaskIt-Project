@@ -19,10 +19,11 @@
   margin: 0;
 
 }
-h3{
+h6{
   font-size: .875em;
   padding-left: 20%;
   margin: 0;
+  width: 100px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;

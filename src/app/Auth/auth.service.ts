@@ -70,6 +70,7 @@ export class AuthService {
           this.handleAuthentication(email, localId, idToken, +expiresIn);
         })
       );
+
   }
 
   autoLogin(){
@@ -96,6 +97,7 @@ export class AuthService {
     this.currentUser.next(null);
     this.router.navigate(['/'])
     localStorage.removeItem('userData');
+    localStorage.removeItem('userProfile');
     if(this.tokenExpirationTimer){
       clearTimeout(this.tokenExpirationTimer);
     }
