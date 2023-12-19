@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { __values } from 'tslib';
@@ -14,8 +15,7 @@ export class ProfileComponent implements OnInit {
   userProfile;
   userName;
   constructor(
-    private authService: AuthService,
-    private httpService: HttpService
+    private authService: AuthService, private router: Router
   ) {}
   ngOnInit(){
     this.userData = JSON.parse(localStorage.getItem('userData'));
@@ -26,5 +26,6 @@ export class ProfileComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+    this.router.navigate(['/'])
   }
 }
