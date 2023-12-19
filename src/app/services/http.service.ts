@@ -7,6 +7,8 @@ import { BehaviorSubject, Subject } from "rxjs";
 
 import { AuthService } from "../auth/auth.service";
 
+import { AuthService } from "../auth/auth.service";
+
 const FIREBASE_URL = environment.firebaseUrl;
 
 @Injectable({
