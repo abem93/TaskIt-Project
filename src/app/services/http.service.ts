@@ -3,9 +3,6 @@ import { Injectable } from "@angular/core";
 import { TaskListService } from "./task-list.service";
 import { Task } from "../task-list/task.model";
 import { environment } from "src/environments/enviroment";
-import { BehaviorSubject, Subject } from "rxjs";
-
-import { AuthService } from "../auth/auth.service";
 
 import { AuthService } from "../auth/auth.service";
 
