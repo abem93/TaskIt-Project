@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { __values } from 'tslib';
@@ -9,23 +10,33 @@ import { __values } from 'tslib';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
+  httpSub:Subscription;
   userData;
   userEmail;
   userProfile;
   userName;
   constructor(
-    private authService: AuthService, private router: Router
+    private authService: AuthService, private router: Router, private http: HttpService
   ) {}
   ngOnInit(){
-    this.userData = JSON.parse(localStorage.getItem('userData'));
-    this.userEmail = this.userData.email;
-    this.userProfile = JSON.parse(localStorage.getItem('userProfile'));
-    this.userName = this.userProfile.name;
+    this.httpSub = this.http.userProfile.subscribe(data => {
+      this.userProfile = data;
+      this.userName = this.userProfile.name;
+
+    });
+
+    this.authService.currentUser.subscribe(data => {
+      this.userEmail = data.email
+    })
+
   }
 
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/'])
+  }
+  ngOnDestroy(): void {
+      this.httpSub.unsubscribe();
   }
 }

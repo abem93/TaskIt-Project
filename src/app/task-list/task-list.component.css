@@ -111,6 +111,9 @@ path {
 svg {
   z-index: 0;
 }
+path{
+  margin: 20% 20% 20% -200%;
+}
 .line {
   flex-basis: 100%;
   height: 0;

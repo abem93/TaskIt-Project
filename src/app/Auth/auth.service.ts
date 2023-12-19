@@ -1,8 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
+
+
 import { User } from './user.model';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/enviroment';
 
 export interface AuthResponseData {
@@ -28,12 +30,17 @@ export class AuthService {
   currentUser = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+
+  ) {}
 
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + API_KEY,
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+          API_KEY,
         {
           email: email,
           password: password,
@@ -56,11 +63,12 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + API_KEY,
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+          API_KEY,
         {
           email,
           password,
-          returnSecureToken: true
+          returnSecureToken: true,
         }
       )
       .pipe(
@@ -70,12 +78,11 @@ export class AuthService {
           this.handleAuthentication(email, localId, idToken, +expiresIn);
         })
       );
-
   }
 
-  autoLogin(){
+  autoLogin() {
     const userData: UserData = JSON.parse(localStorage.getItem('userData'));
-    if(!userData){
+    if (!userData) {
       return;
     }
     const { email, id, _token, _tokenExpirationDate } = userData;
@@ -86,30 +93,32 @@ export class AuthService {
       new Date(_tokenExpirationDate)
     );
 
-    if(loadedUser.token){
+    if (loadedUser.token) {
       this.currentUser.next(loadedUser);
-      const expirationDuration = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime()
-      this.router.navigate(['/tasks'])
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.router.navigate(['/tasks']);
     }
   }
 
-  logout(){
+  logout() {
     this.currentUser.next(null);
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
     localStorage.removeItem('userData');
     localStorage.removeItem('userProfile');
-    if(this.tokenExpirationTimer){
+    if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
     }
-    this.tokenExpirationTimer = null
+    this.tokenExpirationTimer = null;
     //delete after lazy loading???
-    window.location.reload()
+    window.location.reload();
   }
 
-  autoLogout(expirationDuration: number){
-    this.tokenExpirationTimer = setTimeout(() =>{
+  autoLogout(expirationDuration: number) {
+    this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
-    }, expirationDuration)
+    }, expirationDuration);
   }
 
   handleAuthentication(
@@ -119,12 +128,10 @@ export class AuthService {
     expiresIn: number
   ) {
     const tokenExpiration = new Date(new Date().getTime() + expiresIn * 1000);
-    const user = new User(
-      email, id, token, tokenExpiration
-    );
+    const user = new User(email, id, token, tokenExpiration);
     this.currentUser.next(user);
     this.autoLogout(expiresIn * 1000);
-    localStorage.setItem('userData', JSON.stringify(user))
+    localStorage.setItem('userData', JSON.stringify(user));
   }
 
   private handleError(errorRes: HttpErrorResponse) {

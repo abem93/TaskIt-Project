@@ -29,8 +29,6 @@ export class LogInComponent implements OnInit {
 
     authObs.subscribe(
       (resData) => {
-        console.log(resData);
-        this.httpService.fetchUserFromFirebase(resData)
         this.router.navigate(['/tasks']);
       },
       (errorMessage) => {
