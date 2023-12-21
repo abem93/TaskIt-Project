@@ -95,3 +95,9 @@ a{
   padding-top: 7%;
   margin-right: .5em;
 }
+.alert{
+  margin-top: 5%;
+}
+form .ng-invalid.ng-touched {
+  outline: 1.5px solid red;
+}
