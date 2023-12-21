@@ -4,6 +4,8 @@ import { Task } from '../../task-list/task.model';
 import { TaskListService } from '../../services/task-list.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpService } from 'src/app/services/http.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Subscription } from 'rxjs';
 
 
 
@@ -13,7 +15,8 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./new-task.component.css'],
 })
 export class NewTaskComponent implements OnInit{
-
+  authSub: Subscription;
+  userData;
   @ViewChild('taskForm') taskListForm: NgForm;
   id: number;
   task: Task = new Task('','','','','');
@@ -24,7 +27,7 @@ export class NewTaskComponent implements OnInit{
   boredTitle: string = null
 
 
-  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService ){
+  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService, private auth: AuthService ){
       // console.log(this.taskListService.getTask(this.data.id))
       // console.log(data)
   }
@@ -32,6 +35,9 @@ export class NewTaskComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.authSub = this.auth.currentUser.subscribe(data =>{
+      this.userData = data
+    })
 
     if(this.data.id !== undefined){
       this.id = this.data.id
@@ -60,6 +66,6 @@ export class NewTaskComponent implements OnInit{
       });
     }
     this.isEditMode = false
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
 }

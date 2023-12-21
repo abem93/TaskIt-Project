@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { HttpService } from '../services/http.service';
 import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.component';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-task-list',
@@ -14,12 +16,14 @@ import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.com
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit{
+  authSub: Subscription;
+  userData;
   @Input() isEditMode: boolean;
   @Input() task: Task;
   @Input() id: number;
   tasks: Task[];
 
-  constructor(private tasklistService:TaskListService, private dialog: MatDialog, private httpService: HttpService){}
+  constructor(private tasklistService:TaskListService, private dialog: MatDialog, private httpService: HttpService,  private auth: AuthService){}
 
   openNew(id?:number):void {
     this.id = id
@@ -32,6 +36,9 @@ export class TaskListComponent implements OnInit{
     });
   }
   ngOnInit(): void {
+    this.authSub = this.auth.currentUser.subscribe(data =>{
+      this.userData = data
+    })
     this.tasks = this.tasklistService.getTasks();
     this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
   }
@@ -56,7 +63,7 @@ export class TaskListComponent implements OnInit{
     const inputValue = event.target.value
     this.task.priority = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
 
   statusChange(event: any, id: number){
@@ -65,7 +72,7 @@ export class TaskListComponent implements OnInit{
     const inputValue = event.target.value
     this.task.status = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
 
   titleChange(event: any, id:number){
@@ -74,7 +81,7 @@ export class TaskListComponent implements OnInit{
     const inputValue = event.target.value
     this.task.title = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
   onView(id: number){
     const dialogRef = this.dialog.open(DetailedViewComponent, {

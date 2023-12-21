@@ -36,7 +36,7 @@ export class SignUpComponent {
 
     authObs.subscribe(
       (resData) => {
-        console.log(resData);
+
         this.router.navigate(['/login']);
         this.profile = {name}
         this.http.put(this.FIREBASE_URL+ 'users/' + resData.localId + '/profile.json', this.profile).subscribe((data) => {

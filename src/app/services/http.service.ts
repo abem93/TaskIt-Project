@@ -14,28 +14,25 @@ const FIREBASE_URL = environment.firebaseUrl;
 })
 export class HttpService implements OnInit{
   userProfile = new Subject<any>();
-  userData;
-  authSub: Subscription;
+
+
 
 
   constructor(
     private tasklistService: TaskListService,
     private http: HttpClient,
-    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
-      this.authSub = this.auth.currentUser.subscribe(data =>{
-        this.userData = data
-      })
+
   }
 
   // * Methods
 
-  saveTasksToFirebase() {
+  saveTasksToFirebase(userData) {
     const myTasks = this.tasklistService.getTasks();
 
-    this.http.put(FIREBASE_URL+ 'users/' + this.userData.id + '/tasks.json', myTasks).subscribe((data) => {
+    this.http.put(FIREBASE_URL+ 'users/' + userData.id + '/tasks.json', myTasks).subscribe((data) => {
       // console.log(data);
     });
   }

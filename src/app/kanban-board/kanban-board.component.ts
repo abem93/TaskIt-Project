@@ -12,6 +12,8 @@ import {
 import { HttpService } from '../services/http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.component';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-kanban-board',
@@ -19,12 +21,14 @@ import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.com
   styleUrls: ['./kanban-board.component.css']
 })
 export class KanbanBoardComponent implements OnInit{
+  authSub: Subscription;
+  userData;
   id:number;
   task: Task;
   tasks: Task[];
 todo: any;
 
-  constructor(private tasklistService:TaskListService,private dialog: MatDialog, private httpService: HttpService){}
+  constructor(private tasklistService:TaskListService,private dialog: MatDialog, private httpService: HttpService, private auth: AuthService){}
 
   drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
@@ -41,7 +45,10 @@ todo: any;
 
   ngOnInit(): void {
     this.tasks = this.tasklistService.getTasks();
-    this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks)
+    this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
+    this.authSub = this.auth.currentUser.subscribe(data =>{
+      this.userData = data
+    })
   }
   priorityChange(event: any, id: number){
     this.id = id
@@ -49,7 +56,7 @@ todo: any;
     const inputValue = event.target.value
     this.task.priority = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
 
   statusChange(event: any, id: number){
@@ -58,7 +65,7 @@ todo: any;
     const inputValue = event.target.value
     this.task.status = inputValue
     this.tasklistService.updateTask(this.id, this.task);
-    this.httpService.saveTasksToFirebase();
+    this.httpService.saveTasksToFirebase(this.userData);
   }
   onView(id:number){
     const dialogRef = this.dialog.open(DetailedViewComponent, {
