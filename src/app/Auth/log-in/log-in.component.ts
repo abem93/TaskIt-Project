@@ -29,6 +29,7 @@ export class LogInComponent implements OnInit {
 
     authObs.subscribe(
       (resData) => {
+        console.log(resData)
         this.router.navigate(['/tasks']);
       },
       (errorMessage) => {

@@ -1,7 +1,9 @@
 <div class="container">
   <h1>Welcome Back!</h1>
   <span>Lets get to work.</span>
-
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" id="loginForm">
     <label for="email">Email</label>
     <input

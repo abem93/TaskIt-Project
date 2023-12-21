@@ -1,6 +1,9 @@
 <div class="container">
   <div><h1>Welcome to TASKIT!</h1></div>
   <p>Sign up to get things done.</p>
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
   <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" id="signupForm">
     <label for="fname">First Name</label><br />
     <input type="text" id="Fname" name="Fname" ngModel required /><br />

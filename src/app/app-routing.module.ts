@@ -11,8 +11,8 @@ import { BoredComponent } from './bored/bored.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full' },
-  {path: '/', component: LandingPageComponent},
+  {path: '', redirectTo: '', pathMatch: 'full' },
+  {path: '', component: LandingPageComponent},
   {path: 'register', component: SignUpComponent},
   {path: 'login', component: LogInComponent},
   {
