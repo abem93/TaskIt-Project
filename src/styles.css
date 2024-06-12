@@ -17,6 +17,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.logo:hover{
+  background: linear-gradient(
+    to right,
+    black 0% 74%,
+    #48C15B 74% 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 form .ng-invalid.ng-touched {
   outline: 1.5px solid red;
 }
