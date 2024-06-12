@@ -1,12 +1,25 @@
-<div class="container">
-  <div><h1>Welcome to TASKIT</h1></div>
-  <p>This platform allows you to keep track of tasks professionally, domestically, and more. Sign up today to get to work!</p>
+<div class="h-screen flex items-center justify-center">
+  <div class="flex flex-col items-center justify-center text-center md:bg-gray-50  rounded-xl lg:w-1/2 md:border py-5 ">
+    <h1 class="font-inter text-4xl font-bold ">Welcome to TASKIT</h1>
+    <p class="font-inter text-base w-3/4 mt-3">This platform allows you to keep track of tasks professionally, domestically,
+      and more. Sign up today to get to
+      work!</p>
 
-  <img src="https://i.postimg.cc/tRVs6BDb/landing-page-img-1-Background-Removed.png" alt="landing-page-img">
-  <span>Create an account to get started today.</span>
-  <div class="singupButtons">
-    <button type="button" style="cursor: pointer;" routerLink="/register">Sign Up</button> <span>or</span> <button type="button" style="cursor: pointer;" routerLink="/login">Login</button>
+    <img src="https://i.postimg.cc/tRVs6BDb/landing-page-img-1-Background-Removed.png" alt="landing-page-img"
+      class="w-10/12">
+    <span class="w-3/4 text-2xl">Create an account to get started today.</span>
+    <div class="w-3/4 text-white ">
+      <button type="button" routerLink="/register"
+        class="w-full sm:w-auto bg-green-500 hover:bg-transparent hover:text-green-500 rounded-lg px-10 py-1 font-inter text-base font-semibold text-center my-4 sm:m-10 sm:mb-0 cursor-pointer border-2 border-green-500 transition">
+        Sign Up
+      </button> 
+    
+      <span class="text-2xl text-black hidden lg:inline-block">or</span>
+      
+      <button type="button" routerLink="/login"
+        class="w-full sm:w-auto bg-green-500 hover:bg-transparent hover:text-green-500 rounded-lg px-10 py-1 font-inter text-base font-semibold text-center sm:m-10 mb-0  cursor-pointer border-2 border-green-500 transition">
+        Login
+      </button>
+    </div>
   </div>
 </div>
-
-

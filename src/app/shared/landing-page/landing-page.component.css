@@ -1,26 +1,5 @@
-
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  width: 50%;
-  border: 1px solid #E8E8E8;
-  background: #FAFAFA;
-  margin: 2em 22.3125em;
-  padding: 2% 0;
-}
-.container *{
-  margin: 1% 0;
-}
 h1{
-  font-family: 'Inter';
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-left: 2%;
+
   background: linear-gradient(
     to right,
     black 60%,
@@ -30,48 +9,4 @@ h1{
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-}
-p{
-  font-size: 1em;
-  width: 70%;
-}
-
-span{
-  font-size: 1.4375em;
-  width: 70%;
-}
-
-img{
-  width: 80%;
-}
-div{
-  text-align: center;
-}
-button{
-  background: #48C15B;
-  color: white;
-  border-radius: 8px;
-  padding:  1% 10%;
-  border: none;
-  font-family:'Inter';
-  font-size: 1em;
-  font-weight: 600;
-  text-align: center;
-}
-
-button:hover{
-  background: transparent;
-  color: #48C15B;
-  border: 1.2px solid #48C15B;
-}
-.singupButtons *{
-  margin: 0.71875em;
-}
-.singupButtons{
-  justify-content: flex-start;
-  width: 70%;
-}
-span{
-  margin-top: 0;
 }
