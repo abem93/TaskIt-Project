@@ -7,3 +7,17 @@
 .mat-mdc-dialog-container .mdc-dialog__surface {
   border-radius: 16px !important;
 }
+.logo{
+  background: linear-gradient(
+    to right,
+    #48C15B 0% 74%,
+    black 74% 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+form .ng-invalid.ng-touched {
+  outline: 1.5px solid red;
+}
+
