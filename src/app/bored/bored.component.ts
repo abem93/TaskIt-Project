@@ -14,7 +14,7 @@ export class BoredComponent {
   constructor(private dialog: MatDialog, private http: HttpClient){}
 
   generateTask(){
-    this.http.get<any>('https://www.boredapi.com/api/activity').subscribe(data =>{
+    this.http.get<any>('https://bored-api.appbrewery.com/random').subscribe(data =>{
       this.boredTask = data.activity
     })
   }
