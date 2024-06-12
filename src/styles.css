@@ -3,6 +3,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+*{
+  font-family: 'Inter', sans-serif;
+}
 /* Material Dialog */
 .mat-mdc-dialog-container .mdc-dialog__surface {
   border-radius: 16px !important;
@@ -32,3 +35,6 @@ form .ng-invalid.ng-touched {
   outline: 1.5px solid red;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
