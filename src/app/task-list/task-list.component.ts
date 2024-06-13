@@ -22,6 +22,7 @@ export class TaskListComponent implements OnInit{
   @Input() task: Task;
   @Input() id: number;
   tasks: Task[];
+  Math = Math;
 
   constructor(private tasklistService:TaskListService, private dialog: MatDialog, private httpService: HttpService,  private auth: AuthService){}
 
