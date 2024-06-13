@@ -21,9 +21,18 @@ export class MainViewComponent implements OnInit, OnDestroy {
       this.httpService.fetchTasksFromFirebase(data);
       this.httpService.fetchUserFromFirebase(data)
     })
+  }
 
+  toggleSidebar(){
+    document.querySelector('.sidebar').classList.toggle('hidden')
+    document.querySelector('.sidebar-container').classList.toggle('w-[95vw]')
+    document.querySelector('.sidebar-container').classList.toggle('w-7')
+
+    document.querySelector('.main-content').classList.toggle('w-[85vw]')
+    document.querySelector('.main-content').classList.toggle('w-full')
 
   }
+
   ngOnDestroy(): void {
      this.authSub.unsubscribe();
   }

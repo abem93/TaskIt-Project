@@ -1,10 +1,12 @@
-<div class="sidebar" >
-  <app-sidebar></app-sidebar>
+<app-notifications></app-notifications>
+<div class="absolute v-screen w-[95vw] sm:w-[15vw] sidebar-container">
+    <span class="cursor-pointer absolute top-4 right-0 sm:hidden"  (click)="toggleSidebar()">
+      <i class="material-icons">menu</i>
+    </span>
+    <app-sidebar class="sidebar"></app-sidebar>
 </div>
 
-<app-notifications></app-notifications>
-
-
-<div class="task-list">
-<router-outlet></router-outlet>
+ 
+<div class="main-content px-10 py-10 w-[82vw] ml-[15vw]">
+    <router-outlet></router-outlet>
 </div>
