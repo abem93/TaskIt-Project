@@ -1,12 +1,12 @@
 <app-notifications></app-notifications>
-<div class="absolute v-screen w-[95vw] sm:w-[15vw] sidebar-container">
-    <span class="cursor-pointer absolute top-4 right-0 sm:hidden"  (click)="toggleSidebar()">
+<div class="absolute v-screen w-[12vw] sm:w-[15vw] sidebar-container">
+    <span class="cursor-pointer absolute top-4 right-4 z-50 sm:hidden"  (click)="toggleSidebar()">
       <i class="material-icons">menu</i>
     </span>
-    <app-sidebar class="sidebar"></app-sidebar>
+    <app-sidebar class="sidebar hidden sm:inline"></app-sidebar>
 </div>
 
  
-<div class="main-content px-10 py-10 w-[82vw] ml-[15vw]">
+<div class="main-content px-10 pt-10 sm:w-auto sm:ml-[15vw] sm:mr-5 v-screen">
     <router-outlet></router-outlet>
 </div>

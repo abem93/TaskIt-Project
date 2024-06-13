@@ -25,12 +25,11 @@ export class MainViewComponent implements OnInit, OnDestroy {
 
   toggleSidebar(){
     document.querySelector('.sidebar').classList.toggle('hidden')
-    document.querySelector('.sidebar-container').classList.toggle('w-[95vw]')
-    document.querySelector('.sidebar-container').classList.toggle('w-7')
+    document.querySelector('.sidebar-container').classList.toggle('w-[12vw]')
+    document.querySelector('.sidebar-container').classList.toggle('w-[100vw]')
 
-    document.querySelector('.main-content').classList.toggle('w-[85vw]')
     document.querySelector('.main-content').classList.toggle('w-full')
-
+    document.querySelector('.main-content').classList.toggle('hidden')
   }
 
   ngOnDestroy(): void {
