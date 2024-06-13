@@ -1,10 +1,8 @@
-<div class="container">
-  <h1 style="cursor: pointer;" routerLink="/tasks">TASKIT</h1>
-  <button class="taskButton" routerLink="/tasks/list" routerLinkActive="active">Task List</button>
-  <button class="kanBan" routerLink="/tasks/kanban" routerLinkActive="active">KanBan</button>
-  <button class="bored" routerLink="/tasks/bored" routerLinkActive="active">Bored</button>
+<div class="bg-white w-full h-svh flex flex-col gap-6 relative sm:border border-l-2 z-40 *:bg-slate-100">
+  <a routerLink="/" class="text-4xl font-bold logo w-min absolute mb-4 sm:mb-0  left-6 top-10">TASKIT</a>
+  <button class="mt-[20vh] sm:mt-[15vh] rounded-xl py-3 border-0 mx-6 font-inter text-base font-semibold text-center bg-green-500" routerLink="/tasks/list" routerLinkActive="!bg-green-500 text-slate-50">Task List</button>
+  <button class="rounded-xl py-3 px-3 border-0 mx-6 text-base bg-slate-100  font-semibold text-center" routerLink="/tasks/kanban" routerLinkActive="!bg-green-500 text-slate-50">KanBan</button>
+  <button class="rounded-xl py-3 border-0 mx-6 text-base bg-slate-100  font-semibold text-center" routerLink="/tasks/bored" routerLinkActive="!bg-green-500 text-slate-50">Bored</button>
+<app-profile class="absolute bottom-0 border border-t-2 w-full py-3 px-2"></app-profile>
 </div>
 
-<app-profile class="profile">
-
-</app-profile>
