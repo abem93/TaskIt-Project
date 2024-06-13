@@ -1,12 +1,14 @@
-<div class="profile">
-  <div>
-    <img src="https://pics.craiyon.com/2023-07-26/9e6038974a0b44efad9818e32324638b.webp" alt="profile picture" class="profile-pic">
+<div class="flex justify-between">
+  <div class="flex-initial">
+    <img src="https://pics.craiyon.com/2023-07-26/9e6038974a0b44efad9818e32324638b.webp" alt="profile picture" class="rounded-full h-10 ml-2">
   </div>
-  <div class="info">
-    <h6>{{userName}}</h6>
-    <p>{{ userEmail }}</p>
+  <div class="flex-1">
+    <h6 class="font-semibold text-sm ml-4">{{userName}}</h6>
+    <p class="text-xs ml-4 text-slate-400">{{ userEmail }}</p>
   </div>
-  <div>
-    <img src="assets/icons/profile-dash-indicator.svg" alt="log out" class="logout" (click)="onLogout()" style="cursor: pointer;">
+  <div class="self-center">
+    <span>
+      <i class="material-icons cursor-pointer" (click)="onLogout()">logout</i>
+    </span>
   </div>
 </div>
