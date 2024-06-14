@@ -26,16 +26,6 @@ export class TaskListComponent implements OnInit{
 
   constructor(private tasklistService:TaskListService, private dialog: MatDialog, private httpService: HttpService,  private auth: AuthService){}
 
-  openNew(id?:number):void {
-    this.id = id
-    const dialogRef = this.dialog.open(NewTaskComponent, {
-      height: '32.25em',
-      width: '68.125em',
-      data: {
-        id: id
-      }
-    });
-  }
   ngOnInit(): void {
     this.authSub = this.auth.currentUser.subscribe(data =>{
       this.userData = data
@@ -43,16 +33,33 @@ export class TaskListComponent implements OnInit{
     this.tasks = this.tasklistService.getTasks();
     this.tasklistService.taskListChanged.subscribe((tasks) => this.tasks = tasks);
   }
-  onDelete(id:number){
-    const dialogRef = this.dialog.open(DeleteModalComponent, {
-      height: '28.3125em',
-      width: '53.4375em',
+  openNew(id?:number):void {
+    this.id = id
+    const dialogRef = this.dialog.open(NewTaskComponent, {
+      height: '26em',
+      width: '52em',
       data: {
         id: id
       }
     });
-    console.log(this.tasks);
-
+  }
+  onView(id: number){
+    const dialogRef = this.dialog.open(DetailedViewComponent, {
+      height: '28em',
+      width: '50em',
+      data: {
+        id: id
+      }
+    });
+  }
+  onDelete(id:number){
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      height: '20em',
+      width: '50em',
+      data: {
+        id: id
+      }
+    });
   }
   onEdit(id:number){
     this.openNew(id);
@@ -83,15 +90,6 @@ export class TaskListComponent implements OnInit{
     this.task.title = inputValue
     this.tasklistService.updateTask(this.id, this.task);
     this.httpService.saveTasksToFirebase(this.userData);
-  }
-  onView(id: number){
-    const dialogRef = this.dialog.open(DetailedViewComponent, {
-      height: '30em',
-      width: '50em',
-      data: {
-        id: id
-      }
-    });
   }
 
 }

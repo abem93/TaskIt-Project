@@ -1,25 +1,28 @@
-<div mat-dialog-content id="popup">
-  <span class="close" mat-button mat-dialog-close>&times;</span>
-  <h3>{{ isEditMode ? 'Edit Task': 'Add a New Task' }}</h3>
-  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
-    <div class="left-side">
+<div class="h-full  py-10">
+  <span class="absolute top-2 right-5 hover:text-slate-400 hover:text-5xl text-4xl transition" mat-dialog-close>&times;</span>
+  <h3 class="text-3xl font-bold ml-5 mb-3">{{ isEditMode ? 'Edit Task': 'Add a New Task' }}</h3>
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" class="w-full h-full flex gap-10 px-10 *:rounded-xl *:outline-none">
+    <div class="flex flex-col h-full w-2/3">
       <input
         type="text"
         name="title"
         id="title"
         placeholder="Title"
         [ngModel]="editedTask.title"
-        name="title"
         #titleInput="ngModel"
-        required>
-      <span class="error" *ngIf="titleInput.touched && !titleInput.valid">Please enter a task name!</span>
+        required
+        class="px-2 py-2 border border-slate-300 rounded-xl"
+      />
+      <span class="text-red-500 font-medium mt-2" *ngIf="titleInput.touched && !titleInput.valid">Please enter a task name!</span>
 
 
-      <textarea name="description" id="description" rows="8" placeholder="Description" [ngModel]="editedTask.description"></textarea>
+      <textarea name="description" id="description" rows="8" placeholder="Description" [ngModel]="editedTask.description" class="mt-3 px-2 py-1.5 border border-slate-300 rounded-xl resize-none"></textarea>
     </div>
-    <div class="right-side">
+    <div class="flex flex-col h-full w-1/3 gap-5">
 
-      <input type="text" name="date" placeholder="Due Date" onfocus="this.type='date'" onblur="this.type='text' | Date" [ngModel]="editedTask.date" #dateInput="ngModel">
+      <input type="text" name="date" placeholder="Due Date" onfocus="this.type='date'" onblur="this.type='text' | Date" [ngModel]="editedTask.date" #dateInput="ngModel"
+      class="dateInput px-2 py-2.5 border border-slate-300 rounded-xl"
+        />
 
       <!-- <p class="date">
         <input  class="dateInput" type="text" name="date" placeholder="Date" onblur="this.type='text' | Date" [ngModel]="editedTask.date" #dateInput="ngModel">
@@ -37,31 +40,33 @@
           </mat-datepicker-actions>
         </mat-datepicker>
       </mat-form-field> -->
-      <span class="error" *ngIf="dateInput.touched && !dateInput.valid">Please select a date!</span>
+      <span class="text-red-500 font-medium mt-2" *ngIf="dateInput.touched && !dateInput.valid">Please select a date!</span>
 
-      <select name="priority" id="priority" [ngModel]="editedTask.priority" required #requiredInput="ngModel">
-        <option value="" disabled hidden>Priority</option>
+      <select name="priority" id="priority" [ngModel]="editedTask.priority" required #requiredInput="ngModel"
+      class="px-2 py-3 border border-slate-300 rounded-xl" [ngClass]="{'text-slate-400':!requiredInput.valid}">
+        <option value="" disabled hidden class="!text-slate-400">Priority</option>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
 
-      <span class="error" *ngIf="requiredInput.touched && !requiredInput.valid">Please select task priority!</span>
+      <span class="text-red-500 font-medium mt-2" *ngIf="requiredInput.touched && !requiredInput.valid">Please select task priority!</span>
 
 
-      <select name="status" id="status" [ngModel]="editedTask.status" #statusInput="ngModel" required>
-        <option value="" disabled hidden>Status</option>
+      <select name="status" id="status" [ngModel]="editedTask.status" #statusInput="ngModel" required
+      class="px-2 py-3 border border-slate-300 rounded-xl" [ngClass]="{'text-slate-400':!statusInput.valid}">
+        <option value="" disabled hidden class="!text-slate-400">Status</option>
         <option value="To Do">To Do</option>
         <option value="In Progress">In Progress</option>
         <option value="Done">Done</option>
       </select>
 
-      <span class="error" *ngIf="statusInput.touched && !statusInput.valid">Please select task status!</span>
+      <span class="text-red-500 font-medium mt-2" *ngIf="statusInput.touched && !statusInput.valid">Please select task status!</span>
 
 
-      <div class="buttons">
-        <button type="button" style="cursor: pointer;" mat-button mat-dialog-close>Cancel</button>
-        <button type="submit" id="submitBtn" mat-button [mat-dialog-close] [disabled]="!taskForm.valid">{{ isEditMode ? 'Update': 'Create' }}</button>
+      <div class="flex w-full justify-between gap-5">
+        <button type="button" class="hover:bg-slate-500  w-full sm:w-1/2 px-4 py-2.5 bg-slate-400 text-slate-50 rounded-xl font-semibold" mat-dialog-close>Cancel</button>
+        <button type="submit" id="submitBtn" class="hover:bg-green-400  w-full sm:w-1/2 px-4 py-2.5 bg-green-500 text-slate-50 rounded-xl font-semibold" [mat-dialog-close] [disabled]="!taskForm.valid">{{ isEditMode ? 'Update': 'Create' }}</button>
       </div>
     </div>
   </form>

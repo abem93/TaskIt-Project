@@ -14,11 +14,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { DetailedViewComponent } from '../shared/detailed-view/detailed-view.component';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-kanban-board',
   templateUrl: './kanban-board.component.html',
-  styleUrls: ['./kanban-board.component.css']
+  styleUrls: ['./kanban-board.component.css'],
 })
 export class KanbanBoardComponent implements OnInit{
   authSub: Subscription;

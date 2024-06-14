@@ -29,8 +29,8 @@ export class DetailedViewComponent implements OnInit {
 
   onDelete(){
     const dialogRef = this.dialog.open(DeleteModalComponent, {
-      height: '28.3125em',
-      width: '53.4375em',
+      height: '20em',
+      width: '50em',
       data: {
         id: this.id
       }
@@ -39,8 +39,8 @@ export class DetailedViewComponent implements OnInit {
 
   onEdit(){
     const dialogRef = this.dialog.open(NewTaskComponent, {
-      height: '28.3125em',
-      width: '53.4375em',
+      height: '31em',
+      width: '62em',
       data: {
         id: this.id
       }

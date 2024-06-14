@@ -9,7 +9,6 @@
         <option value="InProgress">In Progress</option>
         <option value="done">Done</option>
       </select>
-
       <!-- <input type="text"  placeholder="Date"   onfocus="this.type='date'" onblur="this.type='text' | Date"/> -->
       <select id="date" name="date" class="border border-3 rounded-md py-1 px-2">
         <option value="" selected disabled hidden>Date</option>
@@ -20,9 +19,9 @@
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
-        </select>
+      </select>
     </div>
-    <button type="button" class="rounded-xl py-3 border-0 px-5 bg-green-500 text-slate-50  font-semibold text-center" (click)='openNew()'>Add New Task</button>
+    <button type="button" class="rounded-xl py-2 sm:!py-3 border-0 px-2 sm:!px-12 bg-green-500 text-slate-50  font-semibold text-center" (click)='openNew()'>New Task</button>
 </div>
 <div class="border-2 rounded-xl min-h-[70vh]">
   <div class="flex justify-around text-center py-2 *:text-slate-400">
@@ -34,31 +33,31 @@
   </div>
   <hr>
   <div  *ngFor="let task of tasks; let i = index" [ngClass]="{'inProgress':task.status=='In Progress', 'done':task.status=='Done'}" class="py-1 pl-6 flex items-center justify-between relative *:self-center">
-    <p class="w-1/5 text-center">
-      <textarea type="text" [ngModel]="task.title" (change)="titleChange($event, i)" class="font-semibold pl-2 pt-2 resize-none" [rows]="Math.ceil(task.title.length/23)"></textarea>
+    <p class="w-1/4 flex-grow">
+      <textarea type="text" [ngModel]="task.title" (change)="titleChange($event, i)" class="font-semibold pl-2 pt-2 resize-none w-full" [rows]="Math.ceil(task.title.length/38)"></textarea>
     </p>
     <!-- <p >{{ task.title }}</p> -->
-    <p class="w-1/5 text-center">{{ (task.date | date:'mediumDate')}}</p>
-    <p class="w-1/5 text-center"><select name="priority" class="text-center p-1 border-0 border-r-6 border-transparent rounded-md text-amber-950 w-1/2 h-[1.8em] flex-shrink-0 font-semibold" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" [ngClass]="{'bg-slate-100':task.priority=='Low', 'bg-orange-200':task.priority=='Medium', 'bg-red-500 text-slate-50':task.priority=='High'}">
+    <p class="w-1/5 text-left pl-9 font-medium">{{ (task.date | date:'mediumDate')}}</p>
+    <p class="w-1/5 text-center"><select name="priority" class="text-center p-1 rounded-md text-amber-950 w-1/2  font-semibold" id="priority" [(ngModel)]="task.priority" (change)="priorityChange($event, i)" [ngClass]="{'bg-slate-100':task.priority=='Low', 'bg-orange-200':task.priority=='Medium', 'bg-red-500 text-slate-50':task.priority=='High'}">
       <option value="" selected disabled hidden>Priority</option>
       <option value="Low">Low</option>
       <option value="Medium">Medium</option>
       <option value="High">High</option>
     </select></p>
-    <p class="w-1/5 text-center"><select name="status" class="text-center p-1 border-0 border-r-6 border-transparent rounded-md text-amber-950 w-1/2 h-[1.8em] flex-shrink-0 font-semibold" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)" [ngClass]="{'bg-inProgress':task.status=='In Progress', 'bg-done':task.status=='Done', 'bg-yellow-200':task.status=='To Do'}">
+    <p class="w-1/5 text-center"><select name="status" class="text-center p-1 rounded-md text-amber-950 w-1/2  font-semibold ml-5" id="status" [(ngModel)]="task.status" (change)="statusChange($event, i)" [ngClass]="{'bg-inProgress':task.status=='In Progress', 'bg-done':task.status=='Done', 'bg-yellow-200':task.status=='To Do'}">
       <option value="To Do">To Do</option>
       <option value="In Progress">In Progress</option>
       <option value="Done">Done</option>
     </select></p>
-    <p [task]="task" [id]="i" class="w-1/5 text-center *:mr-4">
+    <p [task]="task" [id]="i" class="w-1/4 text-center *:mr-4 pl-14">
       <span>
-        <i class="material-icons cursor-pointer" (click)="onEdit(i)">edit_note</i>
+        <i class="material-symbols-outlined cursor-pointer" (click)="onEdit(i)">edit_square</i>
       </span>
       <span>
-        <i class="material-icons cursor-pointer" (click)="onView(i)">visibility</i>
+        <i class="material-symbols-outlined cursor-pointer" (click)="onView(i)">visibility</i>
       </span>
       <span>
-        <i class="material-icons cursor-pointer" (click)="onDelete(i)">delete</i>
+        <i class="material-symbols-outlined cursor-pointer" (click)="onDelete(i)">delete</i>
       </span>
     </p>
     <hr class="absolute bottom-0 left-0 w-full">

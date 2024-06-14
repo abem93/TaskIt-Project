@@ -35,6 +35,7 @@ form .ng-invalid.ng-touched {
   outline: 1.5px solid red;
 }
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::placeholder {
+  color: #a5a5a5;
+  opacity: 1;
+}

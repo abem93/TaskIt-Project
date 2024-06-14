@@ -1,21 +1,21 @@
 
-<div class="status" [ngClass]="{'inProgress':task.status==='In Progress', 'done':task.status==='Done'}">
-  <span class="dismiss" mat-button mat-dialog-close>&times;</span>
-  <p>{{task.status}}</p>
+<div class="text-center text-4xl py-4 font-semibold text-amber-950" [ngClass]="{'bg-inProgress':task.status==='In Progress', 'bg-done':task.status==='Done', 'bg-yellow-200':task.status==='To Do'}">
+  <span class="absolute top-2 right-5 hover:text-slate-400 hover:text-5xl text-4xl transition" mat-dialog-close>&times;</span>
+  <p class="">{{task.status}}</p>
 </div>
-<div class="container">
+<div class="h-3/4 flex flex-col justify-center items-center *:text-center gap-16">
   <div class="taskInfo">
-    <h1>{{task.title}}</h1>
-    <span>Date Due:</span>
-    <p>{{task.date | date:'longDate'}}</p>
-    <span *ngIf="task.description">Description</span>
-    <p>{{task.description}}</p>
-    <span>Priority</span>
-    <p>{{task.priority}}</p>
+    <h1 class="text-3xl font-bold">{{task.title}}</h1>
+    <span class="font-medium">Date Due:</span>
+    <p class="text-xl font-semibold">{{task.date | date:'longDate'}}</p>
+    <span *ngIf="task.description" class="font-medium">Description</span>
+    <p class="text-lg font-semibold">{{task.description}}</p>
+    <span class="font-medium">Priority</span>
+    <p class="text-2xl font-semibold" [ngClass]="{'text-orange-400':task.priority=='Medium', 'text-red-500':task.priority=='High'}">{{task.priority}}</p>
   </div>
-  <div class="buttons">
-    <button type="button" class="edit"(click)="onEdit()"  mat-button mat-dialog-close>Edit</button>
-    <button type="button" class="delete" (click)="onDelete()" mat-button mat-dialog-close>Delete</button>
+  <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-1/2 *:rounded-lg">
+    <button type="w-1/2" class="hover:bg-slate-400  w-full sm:w-1/2 px-4 py-2 bg-slate-300" (click)="onEdit()"  mat-dialog-close>Edit</button>
+    <button type="button" class="hover:bg-red-700 bg-red-500 text-slate-50 w-full sm:w-1/2 px-4 py-2" (click)="onDelete()"  mat-dialog-close>Delete</button>
   </div>
 </div>
 
