@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TaskIt-Project:build:production"
+              "buildTarget": "TaskIt-Project:build:production"
             },
             "development": {
-              "browserTarget": "TaskIt-Project:build:development"
+              "buildTarget": "TaskIt-Project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TaskIt-Project:build"
+            "buildTarget": "TaskIt-Project:build"
           }
         },
         "test": {
