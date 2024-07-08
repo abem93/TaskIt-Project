@@ -102,8 +102,19 @@ export class AuthService {
       const expirationDuration =
         new Date(userData._tokenExpirationDate).getTime() -
         new Date().getTime();
-      this.router.navigate(['/tasks']);
     }
+  }
+
+  public getToken(): string | null {
+    const userData = localStorage.getItem('userData');
+    if (!userData) {
+      return null;
+    }
+    const user: {email: string, id: string, _token: string, _tokenExpirationDate: string} = JSON.parse(userData);
+    if (!user._token || new Date() > new Date(user._tokenExpirationDate)) {
+      return null;
+    }
+    return user._token;
   }
 
   logout() {
@@ -127,16 +138,19 @@ export class AuthService {
 
   handleAuthentication(
     email: string,
-    id: string,
+    userId: string,
     token: string,
     expiresIn: number
   ) {
     const tokenExpiration = new Date(new Date().getTime() + expiresIn * 1000);
-    const user = new User(email, id, token, tokenExpiration);
+    const user = new User(email, userId, token, tokenExpiration);
     this.currentUser.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
   }
+
+
+ 
 
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'Incorrect Email or Password';

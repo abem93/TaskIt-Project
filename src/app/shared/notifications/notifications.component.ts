@@ -19,7 +19,6 @@ export class NotificationsComponent {
       })
       this.taskListService.notificationSubject.subscribe((notification)=>{
         this.action = notification.action
-        console.log(this.action)
         this.notificationText = `${this.action}:  "${notification.task.title}"`;
         this.show = true
         this.showNotification();

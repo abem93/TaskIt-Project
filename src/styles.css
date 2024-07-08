@@ -39,3 +39,44 @@ form .ng-invalid.ng-touched {
   color: #a5a5a5;
   opacity: 1;
 }
+
+/* General form field styling */
+.mat-mdc-text-field-wrapper .mdc-text-field--filled {
+  border-radius: 16px !important; /* Rounded corners */
+}
+
+.mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before{
+  display: none;
+}
+
+.mat-mdc-form-field-flex{
+  padding: 0px !important;
+}
+
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+  padding: 0 0 0 1rem;
+  
+  width: 10rem;
+  height: 2.1rem;
+  border: 1px solid #e8e8e8;
+  background: white !important;
+  border-radius: 8px;
+}
+.mat-mdc-form-field-focus-overlay{
+  display: none;
+}
+.mat-mdc-form-field-type-mat-date-range-input .mat-mdc-form-field-infix{
+  height: 2rem !important;
+  padding: 0 !important;
+}
+.mat-date-range-input-wrapper,
+.mat-mdc-form-field-flex, 
+.mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label{
+  height: 2.4rem;
+}
+
+mat-label{
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #a5a5a5;
+}

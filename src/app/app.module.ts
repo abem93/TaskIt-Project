@@ -30,9 +30,11 @@ import {
 } from '@angular/cdk/drag-drop';
 import { NgFor } from '@angular/common';
 import { BoredComponent } from './bored/bored.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DetailedViewComponent } from './shared/detailed-view/detailed-view.component'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpInterceptor } from '@angular/common/http';
+import { AuthInterceptorService } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { DetailedViewComponent } from './shared/detailed-view/detailed-view.comp
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
@@ -67,9 +70,16 @@ import { DetailedViewComponent } from './shared/detailed-view/detailed-view.comp
     CdkDropList,
     NgFor,
     CdkDrag,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

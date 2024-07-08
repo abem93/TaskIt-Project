@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NewTaskComponent } from '../shared/new-task/new-task.component';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-bored',
@@ -13,10 +13,14 @@ export class BoredComponent {
 
   constructor(private dialog: MatDialog, private http: HttpClient){}
 
-  generateTask(){
-    this.http.get<any>('https://bored-api.appbrewery.com/random').subscribe(data =>{
-      this.boredTask = data.activity
-    })
+  generateTask() {
+    const proxyUrl = 'https://corsproxy.io/?';
+    const targetUrl = 'https://bored-api.appbrewery.com/random';
+    const headers = new HttpHeaders().set('X-Skip-Interceptor', 'true');
+  
+    this.http.get<any>(`${proxyUrl}${targetUrl}`, { headers }).subscribe(data => {
+      this.boredTask = data.activity;
+    });
   }
 
   addTask(){

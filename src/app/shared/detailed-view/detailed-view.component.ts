@@ -12,7 +12,7 @@ import { NewTaskComponent } from '../new-task/new-task.component';
 })
 export class DetailedViewComponent implements OnInit {
   id: number;
-  task: Task = new Task('', '', '', '', '');
+  task: Task = new Task(0, '', '', '', '', '', '');
 
   constructor(
     private taskListService: TaskListService,

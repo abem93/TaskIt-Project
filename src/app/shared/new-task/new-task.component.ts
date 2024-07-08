@@ -19,18 +19,15 @@ export class NewTaskComponent implements OnInit{
   userData;
   @ViewChild('taskForm') taskListForm: NgForm;
   id: number;
-  task: Task = new Task('','','','','');
+  task: Task = new Task(0,'','','','','','');
 
   isEditMode: boolean = false;
-  editedTask: Task = new Task('','','','','');
+  editedTask: Task = new Task(0,'','','','','','');
   formSubmitted = false;
   boredTitle: string = null
 
 
-  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService, private auth: AuthService ){
-      // console.log(this.taskListService.getTask(this.data.id))
-      // console.log(data)
-  }
+  constructor(private taskListService: TaskListService, @Inject(MAT_DIALOG_DATA) private data:any, private httpService: HttpService, private auth: AuthService ){}
 
 
 
@@ -66,6 +63,7 @@ export class NewTaskComponent implements OnInit{
       });
     }
     this.isEditMode = false
-    this.httpService.saveTasksToFirebase(this.userData);
+    this.task.list ? this.task.list = 'tasks' : this.task.list = this.task.list
+    this.httpService.saveTasksToFirebase(this.userData, this.task.list);
   }
 }

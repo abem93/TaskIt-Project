@@ -9,22 +9,29 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { BoredComponent } from './bored/bored.component';
 import { AuthGuard } from './auth/auth.guard';
+import { NonAuthGuard } from './auth/nonAuth.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '', pathMatch: 'full' },
-  {path: '', component: LandingPageComponent},
-  {path: 'register', component: SignUpComponent},
-  {path: 'login', component: LogInComponent},
+  {
+    path: '', component: LandingPageComponent, canActivate: [NonAuthGuard],
+    children: [
+      {path: '', redirectTo: 'tasks', pathMatch: 'full' },
+    ]
+  },
+  {path: 'register', component: SignUpComponent, canActivate: [NonAuthGuard]},
+  {path: 'login', component: LogInComponent, canActivate: [NonAuthGuard]},
   {
     path: 'tasks', component: MainViewComponent, canActivate: [AuthGuard],
     children:[
-      { path: '', redirectTo: '/tasks/list', pathMatch: 'full' },
       { path: 'list', component: TaskListComponent },
       { path: 'kanban', component: KanbanBoardComponent },
-      { path: 'bored', component: BoredComponent }
-    ]},
-
-]
+      { path: 'bored', component: BoredComponent },
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: '**', redirectTo: 'list' }
+    ]
+  },
+  { path: '**', redirectTo: 'tasks' }
+];
 
 @NgModule({
   imports: [

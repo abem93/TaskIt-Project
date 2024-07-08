@@ -4,8 +4,7 @@ import { TaskListService } from "./task-list.service";
 import { Task } from "../task-list/task.model";
 import { environment } from "src/environments/enviroment";
 
-import { AuthService } from "../auth/auth.service";
-import { Subject, Subscription } from "rxjs";
+import { Subject} from "rxjs";
 
 const FIREBASE_URL = environment.firebaseUrl;
 
@@ -14,10 +13,6 @@ const FIREBASE_URL = environment.firebaseUrl;
 })
 export class HttpService implements OnInit{
   userProfile = new Subject<any>();
-
-
-
-
   constructor(
     private tasklistService: TaskListService,
     private http: HttpClient,
@@ -27,24 +22,36 @@ export class HttpService implements OnInit{
 
   }
 
-  // * Methods
 
-  saveTasksToFirebase(userData) {
+
+  saveTasksToFirebase(userData, listName?: string) {
     const myTasks = this.tasklistService.getTasks();
+    listName = listName ? listName : 'tasks';
 
-    this.http.put(FIREBASE_URL+ 'users/' + userData.id + '/tasks.json', myTasks).subscribe((data) => {
-      // console.log(data);
+    this.http.put(FIREBASE_URL+ 'users/' + userData.id + '/' + listName + '.json', myTasks).subscribe((data) => {
+      
     });
   }
 
-  // fetch data from Firebase - REQUEST
-  fetchTasksFromFirebase(data) {
+  
+  // fetch list from Firebase - REQUEST
+  fetchTasksFromFirebase(data, listName?: string) {
+    listName = listName ? listName : 'tasks';
 
-    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + data.id + '/tasks.json').subscribe((data) => {
+    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + data.id + '/' + listName + '.json',).subscribe((data) => {
       // console.log('DATA from FB: ', data);
       this.tasklistService.setTasks(data ?? []);
     });
   }
+
+  //Fetch Lists
+  fetchListsFromFirebase(data) {
+    this.http.get<Task[]>(FIREBASE_URL+ 'users/' + data.id + '.json',).subscribe((data) => {
+      console.log('DATA from FB: ', data);
+      // this.tasklistService.setTasks(data ?? []);
+    });
+  }
+
 
   // fetch User
   fetchUserFromFirebase(data) {

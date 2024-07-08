@@ -24,7 +24,15 @@ export class TaskListService {
   }
 
   getTask(id: number) {
-    return this.tasks[id];
+      return this.tasks[id];
+  }
+  
+  getTasks() {
+    return [...this.tasks];
+  }
+
+  findTask(task: Task) {
+    return this.tasks.indexOf(task);
   }
 
   selectTask(task: Task) {
@@ -36,10 +44,6 @@ export class TaskListService {
     this.tasks.splice(id, 1);
     this.taskListChanged.next(this.getTasks());
 
-  }
-
-  getTasks() {
-    return [...this.tasks];
   }
 
   setTasks(tasks: Task[]){

@@ -27,7 +27,6 @@ export class SignUpComponent {
     const name = form.value.Fname + ' ' + form.value.Lname
     const email = form.value.email;
     const password = form.value.password;
-    console.log(name)
     let authObs: Observable<AuthResponseData>;
 
 
